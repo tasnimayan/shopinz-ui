@@ -2,6 +2,8 @@ import ProductStore from "../../store/ProductStore.js";
 import SliderSkeleton from "../../skeleton/slider-skeleton.jsx";
 import {Link} from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 const Slider = () => {
 
     const {SliderList}=ProductStore();
@@ -39,7 +41,7 @@ const Slider = () => {
                                                     <Link to="" className="btn btn-theme ms-2" style={{width:'130px'}}>Women</Link>
                                                 </div>
                                                 <div className="col-12 col-lg-5 col-sm-12 col-md-5 p-5">
-                                                    <img src={item['image']} className="w-100" alt="..." />
+                                                    <img src={ item['image'] ? BASE_URL +item['image'] : ""} className="w-100" alt="..." />
                                                 </div>
                                             </div>
                                         </div>

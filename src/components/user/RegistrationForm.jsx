@@ -47,7 +47,7 @@ const RegistrationForm = () => {
       <div className="w-75 mx-auto p-lg-4">
         <div className="flex-center my-5 shadow-smc border">
           <div className="col-5 h-100 d-none d-md-block">
-            <img src="src/assets/images/register_poster.jpg" alt="" className="object-fit-cover" style={{width:"100%", height:"100%"}}/>
+            <img src="/src/assets/images/register_poster.jpg" alt="" className="object-fit-cover" style={{width:"100%", height:"100%"}}/>
           </div>
           <div className="col-md-7 py-3 p-md-5 text-center">
             <div>
