@@ -48,9 +48,7 @@ const TrendingSlider = () => {
                       />
                     </div>
                     <div className="card-body px-2 py-2">
-                      <p className="fs-sm text-secondary mt-2 line-1">
-                        {item.title}
-                      </p>
+                      <p className="fs-sm text-secondary mt-2 line-1">{item.title}</p>
                       <StarRatings
                         rating={parseFloat(item.rating ?? 0)}
                         starRatedColor="gold"
@@ -60,14 +58,10 @@ const TrendingSlider = () => {
                       {item.discount ? (
                         <p className="text-accent fs-md my-0 fw-semibold">
                           ${item['discountPrice']}{' '}
-                          <span className="strike text-black-50 fs-md fw-normal">
-                            ${item['price']}
-                          </span>{' '}
+                          <span className="strike text-black-50 fs-md fw-normal">${item['price']}</span>{' '}
                         </p>
                       ) : (
-                        <p className="text-accent  my-0 fw-semibold">
-                          ${item['price']}{' '}
-                        </p>
+                        <p className="text-accent  my-0 fw-semibold">${item['price']} </p>
                       )}
                     </div>
                   </Link>

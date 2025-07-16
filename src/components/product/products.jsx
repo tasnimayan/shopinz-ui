@@ -30,9 +30,7 @@ const Products = () => {
             {TAB_CONFIG.map((tab) => (
               <li className="nav-item" key={tab.key}>
                 <button
-                  className={`nav-link ${
-                    activeTab === tab.key ? 'active' : ''
-                  }`}
+                  className={`nav-link ${activeTab === tab.key ? 'active' : ''}`}
                   type="button"
                   onClick={() => setActiveTab(tab.key)}
                 >
