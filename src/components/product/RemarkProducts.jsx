@@ -4,8 +4,7 @@ import ProductsPage from '../../pages/ProductsPage';
 
 const RemarkProducts = () => {
   const { remark } = useParams();
-
-  return <ProductsPage categoryId={null} remarkType={remark} />;
+  return <ProductsPage key={remark} remarkType={remark} />;
 };
 
 export default RemarkProducts;

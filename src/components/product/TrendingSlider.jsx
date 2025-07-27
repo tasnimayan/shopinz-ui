@@ -40,7 +40,7 @@ const TrendingSlider = () => {
             return (
               <SwiperSlide className="bg-transparent p-2" key={idx}>
                 <div className="shadow-smc rounded text-lg-center">
-                  <Link to={`/details/${item._id}`} className="w-100">
+                  <Link to={`/products/${item._id}`} className="w-100">
                     <div style={{ width: '100%', height: '140px' }}>
                       <img
                         className="w-100 h-100 rounded-top-2 object-fit-cover"

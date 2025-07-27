@@ -58,17 +58,17 @@ const ProductsPage = ({ categoryId, remarkType }) => {
   const { BrandListRequest, BrandList, CategoryList, CategoryListRequest, ListByFilterRequest } = ProductStore();
 
   const [searchParams] = useSearchParams();
+  const [category, setCategory] = useState(categoryId);
   const [filter, setFilter] = useState({
     brandId: '',
-    categoryId: categoryId,
     maxPrice: '',
     minPrice: '',
   });
 
   const search = searchParams.get('search');
   const brand = searchParams.get('brand');
-  const category = searchParams.get('category');
-  const remark = searchParams.get('remark');
+  const queryCategory = searchParams.get('category');
+  const queryRemark = searchParams.get('remark');
 
   const fetchData = useCallback(async () => {
     try {
@@ -78,17 +78,19 @@ const ProductsPage = ({ categoryId, remarkType }) => {
         ...filter,
         search,
         brandId: brand,
+        remark: remarkType || queryRemark,
         categoryId: category,
-        remark: remarkType || remark,
       });
     } catch (err) {
       console.error('Error fetching products:', err);
     }
-  }, [filter, search, brand, category, remark, BrandList, CategoryList]);
+  }, [filter, search, brand, category, queryRemark, remarkType, BrandList, CategoryList]);
 
   useEffect(() => {
+    if (queryCategory) setCategory(queryCategory);
+
     fetchData();
-  }, [fetchData]);
+  }, [fetchData, searchParams]);
 
   const handleFilterChange = useCallback((name, value) => {
     setFilter((prevFilter) => ({
@@ -129,11 +131,7 @@ const ProductsPage = ({ categoryId, remarkType }) => {
                   )) || <option>Loading brands...</option>}
                 </FilterSection>
 
-                <FilterSection
-                  title="Categories"
-                  value={filter.categoryId}
-                  onChange={(e) => handleFilterChange('categoryId', e.target.value)}
-                >
+                <FilterSection title="Categories" value={category} onChange={(e) => setCategory(e.target.value)}>
                   <option value="">All Categories</option>
                   {CategoryList?.map((category) => (
                     <option key={category._id} value={category._id}>

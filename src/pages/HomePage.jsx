@@ -14,12 +14,7 @@ import CouponCard from '../components/product/CouponCard.jsx';
 import OfferSlider from '../components/product/OfferSlider.jsx';
 
 const HomePage = () => {
-  const {
-    BrandListRequest,
-    CategoryListRequest,
-    SliderListRequest,
-    ListByRemarkRequest,
-  } = ProductStore();
+  const { BrandListRequest, CategoryListRequest, SliderListRequest, ListByRemarkRequest } = ProductStore();
   const { FeatureListRequest } = FeatureStore();
 
   useEffect(() => {

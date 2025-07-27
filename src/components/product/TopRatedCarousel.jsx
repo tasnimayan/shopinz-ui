@@ -14,7 +14,7 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 
 const TopRatedSlide = memo(({ item }) => (
   <div className="card">
-    <Link to={`/details/${item._id}`} className="w-100">
+    <Link to={`/products/${item._id}`} className="w-100">
       <div className="card-body rounded-1" style={{ backgroundColor: '#f8f9fa' }}>
         <div className="row d-flex align-items-center text-start">
           <div className="col-4 p-0" style={{ height: '100px' }}>
