@@ -9,6 +9,7 @@ import WishStore from '../../store/WishStore.js';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
+import '../../assets/css/product-details.style.css';
 
 const ProductData = ({ data }) => {
   const [selectedColor, setSelectedColor] = useState('');
@@ -347,45 +348,6 @@ const Details = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .nav-tabs .nav-link {
-          margin-bottom: -1px;
-          background: none;
-          border: none;
-          color: #6c757d;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .nav-tabs .nav-link:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 3px;
-          background-color: #0d6efd;
-          transition: all 0.3s ease;
-          transform: translateX(-50%);
-        }
-
-        .nav-tabs .nav-link:hover,
-        .nav-tabs .nav-link.active {
-          color: #0d6efd;
-          background-color: rgba(13, 110, 253, 0.05);
-          border: none;
-        }
-
-        .nav-tabs .nav-link.active:after {
-          width: 100%;
-        }
-
-        .tab-content {
-          background: #fff;
-          border-radius: 0 0 0.5rem 0.5rem;
-        }
-      `}</style>
     </div>
   );
 };
