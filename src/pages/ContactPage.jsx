@@ -16,7 +16,6 @@ const ContactPage = () => {
     // Set function for enquiry API
     // let res = await SendEnquiry(enquiry)
     let res = false;
-    console.log(contact);
     if (res) {
       toast.success('Your enquiry has been Submitted');
     } else {

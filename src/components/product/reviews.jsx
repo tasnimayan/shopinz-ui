@@ -116,7 +116,6 @@ const Reviews = ({ productId }) => {
         throw new Error('Failed to submit review');
       }
     } catch (error) {
-      console.error('Error submitting review:', error);
       toast.error(error.message || 'Failed to submit review. Please try again.');
     } finally {
       setIsSubmitting(false);

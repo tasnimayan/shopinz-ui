@@ -15,7 +15,6 @@ const AddProductForm = () => {
     const selectedFile = e.target.files;
     if (selectedFile) {
       setFile(selectedFile.name);
-      console.log(file);
       productData.photos = selectedFile;
     }
   };
@@ -33,7 +32,6 @@ const AddProductForm = () => {
 
   const publishProduct = async (e) => {
     e.preventDefault();
-    console.log(productData);
     let res = await CreateProductRequest(productData);
     if (res) {
       toast.success('Product has been Published');

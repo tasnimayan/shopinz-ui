@@ -1,7 +1,6 @@
 import './profileDetails.style.css';
 import UserStore from '../../store/userStore.js';
 import { useEffect } from 'react';
-import ProfileForm from './Profile-Form';
 import ProfileSkeleton from '../../skeleton/profile-skeleton.jsx';
 
 const ProfileDetails = () => {
@@ -25,7 +24,7 @@ const ProfileDetails = () => {
           <div className="panel">
             <div className="user-heading round ">
               <a href="#">
-                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
+                <img src="/src/assets/images/avatar.png" alt="" />
               </a>
               <h1>{ProfileDetails.details.cus_name}</h1>
               <p>{ProfileDetails.email ?? ''}</p>

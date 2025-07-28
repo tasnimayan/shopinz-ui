@@ -20,7 +20,6 @@ const RegistrationForm = () => {
     if (!ValidationHelper.IsEmail(RegFormData.email)) {
       toast.error('Invalid Email Address!');
     } else {
-      console.log(RegFormData);
       let res = await UserRegRequest(RegFormData);
       if (!res) {
         return toast.error('Could not complete registration');

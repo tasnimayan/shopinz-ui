@@ -13,8 +13,7 @@ const SellerRegistration = () => {
     if (!ValidationHelper.IsEmail(RegFormData.email)) {
       toast.error('Invalid Email Address!');
     } else {
-      console.log(RegFormData);
-      let res = await SellerRegRequest(RegFromData);
+      let res = await SellerRegRequest(RegFormData);
       res ? navigate('/seller/dashboard') : toast.error('Something Went Wrong!');
     }
   };

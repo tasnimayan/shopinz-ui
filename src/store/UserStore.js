@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
-import { getEmail, unauthorized } from '../utility/utility.js';
+import { unauthorized } from '../utility/utility.js';
 import Cookies from 'js-cookie';
 const UserStore = create((set) => ({
   isLogin: () => {

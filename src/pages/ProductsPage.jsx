@@ -5,6 +5,7 @@ import Layout from '../components/layout/Layout.jsx';
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 import ProductList from '../components/product/ProductList.jsx';
+import toast from 'react-hot-toast';
 
 // Constants
 const PRICE_RANGE = {
@@ -82,7 +83,7 @@ const ProductsPage = ({ categoryId, remarkType }) => {
         categoryId: category,
       });
     } catch (err) {
-      console.error('Error fetching products:', err);
+      toast.error('Error fetching products:', err);
     }
   }, [filter, search, brand, category, queryRemark, remarkType, BrandList, CategoryList]);
 
