@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { routes } from './routes';
 import { privateSellerRoutes } from './routes';
-import PrivateRoute from './utility/Autentication.jsx';
+import PrivateRoute from './utility/Authentication.jsx';
 import { Loading } from './components/Loading.jsx';
 
 const App = () => {

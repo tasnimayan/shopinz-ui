@@ -7,10 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/v1': {
-        target: 'http://localhost:8000/',
-        // target:"https://shopinz.up.railway.app/",
+        target: 'https://shopinz.up.railway.app/',
         changeOrigin: true,
-        secure: false,
+        secure: true,
         // rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
