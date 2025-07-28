@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 import Brands from '../components/product/brands.jsx';
 import ProductStore from '../store/ProductStore.js';
 import { useEffect } from 'react';
-import Details from '../components/product/Details.jsx';
-const ProductDetails = () => {
+import { ProductDetails } from '../components/product/ProductDetails.jsx';
+
+export default function ProductDetailsPage() {
   const { BrandList, DetailsRequest, ReviewListRequest, BrandListRequest } = ProductStore();
   const { id } = useParams();
 
@@ -19,10 +20,9 @@ const ProductDetails = () => {
   return (
     <Layout>
       <div className="container mt-2">
-        <Details />
+        <ProductDetails />
         <Brands />
       </div>
     </Layout>
   );
-};
-export default ProductDetails;
+}

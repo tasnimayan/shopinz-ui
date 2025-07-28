@@ -7,7 +7,7 @@ const LoginForm = React.lazy(() => import('./components/seller/Login.jsx'));
 const RemarkProducts = React.lazy(() => import('./components/product/RemarkProducts.jsx'));
 
 const HomePage = React.lazy(() => import('./pages/HomePage.jsx'));
-const ProductDetails = React.lazy(() => import('./pages/ProductDetails.jsx'));
+const ProductDetails = React.lazy(() => import('./pages/ProductDetailsPage.jsx'));
 const ProductByBrand = React.lazy(() => import('./pages/ProductByBrand.jsx'));
 const RefundPage = React.lazy(() => import('./pages/RefundPage.jsx'));
 const PrivacyPage = React.lazy(() => import('./pages/PrivacyPage.jsx'));
