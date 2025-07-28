@@ -1,4 +1,4 @@
-import ProductStore from '../../store/ProductStore.js';
+import ProductStore from '../../store/productStore.js';
 import StarRatings from 'react-star-ratings';
 import { useEffect, useState, useRef } from 'react';
 import { toast } from 'react-hot-toast';

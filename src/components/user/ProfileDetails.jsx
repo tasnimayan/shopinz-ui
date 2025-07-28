@@ -1,22 +1,21 @@
-import './profileDetails.style.css'
-import UserStore from "../../store/UserStore.js";
+import './profileDetails.style.css';
+import UserStore from '../../store/userStore.js';
 import { useEffect } from 'react';
 import ProfileForm from './Profile-Form';
 import ProfileSkeleton from '../../skeleton/profile-skeleton.jsx';
 
-
 const ProfileDetails = () => {
-  let {ProfileDetails,ProfileDetailsRequest, OrderDetails, OrderDetailsRequest}=UserStore();
+  let { ProfileDetails, ProfileDetailsRequest, OrderDetails, OrderDetailsRequest } = UserStore();
 
-    useEffect(() => {
-        (async ()=>{
-            await ProfileDetailsRequest()
-            await OrderDetailsRequest()
-        })()
-    }, []);
+  useEffect(() => {
+    (async () => {
+      await ProfileDetailsRequest();
+      await OrderDetailsRequest();
+    })();
+  }, []);
 
-  if(!ProfileDetails){
-    return <ProfileSkeleton />
+  if (!ProfileDetails) {
+    return <ProfileSkeleton />;
   }
   return (
     <div className="container">
@@ -29,14 +28,18 @@ const ProfileDetails = () => {
                 <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
               </a>
               <h1>{ProfileDetails.details.cus_name}</h1>
-              <p>{ProfileDetails.email ?? ""}</p>
+              <p>{ProfileDetails.email ?? ''}</p>
             </div>
             <ul className="nav flex-column nav-pills">
               <li className="">
-                <a href="#"><i className="bi bi-person"></i> Profile</a>
+                <a href="#">
+                  <i className="bi bi-person"></i> Profile
+                </a>
               </li>
               <li>
-                <a href="#"><i className="bi bi-pencil-square"></i>Edit profile</a>
+                <a href="#">
+                  <i className="bi bi-pencil-square"></i>Edit profile
+                </a>
               </li>
             </ul>
           </div>
@@ -44,57 +47,65 @@ const ProfileDetails = () => {
         <div className="profile-info col-md-9">
           <div className="bg-white p-5 rounded">
             <h5>Personal Profile</h5>
-            <hr/>
+            <hr />
             <div className="row">
               <div className="bio-row">
-                  <p><span>Name </span>: {ProfileDetails?.details.cus_name}</p>
+                <p>
+                  <span>Name </span>: {ProfileDetails?.details.cus_name}
+                </p>
               </div>
               <div className="bio-row">
-                  <p><span>City </span>: {ProfileDetails?.details.cus_city}</p>
+                <p>
+                  <span>City </span>: {ProfileDetails?.details.cus_city}
+                </p>
               </div>
               <div className="bio-row">
-                  <p><span>Country </span>: {ProfileDetails?.details.cus_country}</p>
+                <p>
+                  <span>Country </span>: {ProfileDetails?.details.cus_country}
+                </p>
               </div>
               <div className="bio-row">
-                  <p><span>Birthday</span>: None</p>
+                <p>
+                  <span>Birthday</span>: None
+                </p>
               </div>
               <div className="bio-row">
-                  <p><span>Phone </span>: {ProfileDetails?.details.cus_phone}</p>
+                <p>
+                  <span>Phone </span>: {ProfileDetails?.details.cus_phone}
+                </p>
               </div>
               <div className="bio-row">
-                  <p><span>Email </span>: {ProfileDetails?.email}</p>
+                <p>
+                  <span>Email </span>: {ProfileDetails?.email}
+                </p>
               </div>
             </div>
           </div>
           <div>
             <div className="row g-4 mt-2">
-              {
-                [1,2,3].map((id)=>{
-                  return (
-                    <div className="col-6 col-md-4" key={id}>
-                      <div className='bg-white rounded-2 flex-center shadow-sm'>
-                        <div className="float-start w-40 flex-center fw-bold fs-4" style={{height:"100px"}} >
-                          <p className='m-0'>35</p>
-                        </div>
-                        <div className="float-start w-60">
-                            <h4>Total Orders</h4>
-                            <p>Started : 15 July</p>
-                        </div>
+              {[1, 2, 3].map((id) => {
+                return (
+                  <div className="col-6 col-md-4" key={id}>
+                    <div className="bg-white rounded-2 flex-center shadow-sm">
+                      <div className="float-start w-40 flex-center fw-bold fs-4" style={{ height: '100px' }}>
+                        <p className="m-0">35</p>
+                      </div>
+                      <div className="float-start w-60">
+                        <h4>Total Orders</h4>
+                        <p>Started : 15 July</p>
                       </div>
                     </div>
-                  )
-                })
-              }
-              
-                                    
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div  className='bg-white mt-4 p-5 rounded'>
+          <div className="bg-white mt-4 p-5 rounded">
             <h5 className="text-warning">Recent Orders</h5>
-            <hr/>
+            <hr />
             <div className="card">
-              <table className='table'>
+              <table className="table">
                 <thead>
                   <tr>
                     <th>Order #</th>
@@ -104,38 +115,27 @@ const ProfileDetails = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {
-                    OrderDetails?.map((item, index)=>{
-                      let date = new Date(item.createdAt)
-                      let purchaseDate = `${date.getDate()} /${date.getMonth()+1} /${date.getFullYear()}`
-                      return (
-                        <tr key={index} >
-                          <td>#000</td>
-                          <td>{purchaseDate}</td>
-                          <td>{item.product.title}</td>
-                          <td>{item.price}</td>
-                        </tr>
-                      )
-
-                    })
-                  }
-                  
+                  {OrderDetails?.map((item, index) => {
+                    let date = new Date(item.createdAt);
+                    let purchaseDate = `${date.getDate()} /${date.getMonth() + 1} /${date.getFullYear()}`;
+                    return (
+                      <tr key={index}>
+                        <td>#000</td>
+                        <td>{purchaseDate}</td>
+                        <td>{item.product.title}</td>
+                        <td>{item.price}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
-
-                
               </table>
-
             </div>
-
           </div>
-
-
 
           {/* <ProfileForm /> */}
         </div>
       </div>
     </div>
-
   );
 };
 

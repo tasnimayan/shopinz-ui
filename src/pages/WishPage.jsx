@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/layout.jsx';
+import Layout from '../components/layout/Layout.jsx';
 import WishLists from '../components/wish/wish-list.jsx';
 
 const WishPage = () => {

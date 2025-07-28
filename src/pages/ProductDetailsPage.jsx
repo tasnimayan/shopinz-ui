@@ -1,9 +1,9 @@
-import Layout from '../components/layout/layout.jsx';
 import { useParams } from 'react-router-dom';
-import Brands from '../components/product/brands.jsx';
-import ProductStore from '../store/ProductStore.js';
+import ProductStore from '../store/productStore.js';
 import { useEffect } from 'react';
 import { ProductDetails } from '../components/product/ProductDetails.jsx';
+import Layout from '../components/layout/Layout.jsx';
+import Brands from '../components/product/Brands.jsx';
 
 export default function ProductDetailsPage() {
   const { BrandList, DetailsRequest, ReviewListRequest, BrandListRequest } = ProductStore();

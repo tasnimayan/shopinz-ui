@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import ProductStore from '../store/ProductStore';
-import Layout from '../components/layout/layout';
+import ProductStore from '../store/productStore';
+import Layout from '../components/layout/Layout';
 
 const CreateProduct = () => {
   const { CategoryList, CategoryListRequest } = ProductStore();

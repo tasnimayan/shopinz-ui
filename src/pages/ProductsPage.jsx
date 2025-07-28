@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ProductStore from '../store/ProductStore.js';
+import ProductStore from '../store/productStore.js';
 import { useSearchParams } from 'react-router-dom';
-import Layout from '../components/layout/layout.jsx';
+import Layout from '../components/layout/Layout.jsx';
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 import ProductList from '../components/product/ProductList.jsx';

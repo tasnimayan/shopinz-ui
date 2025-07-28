@@ -7,7 +7,8 @@ const FullCard = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="card">
-              <div className="path">HOME / FACE <a>/ CLEANSERS</a>
+              <div className="path">
+                HOME / FACE <a>/ CLEANSERS</a>
               </div>
               <div className="row">
                 <div className="col-md-6 text-center align-self-center">
@@ -76,11 +77,12 @@ const FullCard = () => {
           </div>
           <div className="carousel-item">
             <div className="card">
-              <div className="path">HOME / FACE <a>/ CLEANSERS</a>
+              <div className="path">
+                HOME / FACE <a>/ CLEANSERS</a>
               </div>
               <div className="row">
                 <div className="col-md-6 text-center align-self-center">
-                  <img className="img-fluid" src="https://i.imgur.com/7a9V4yw.png"/>
+                  <img className="img-fluid" src="https://i.imgur.com/7a9V4yw.png" />
                 </div>
                 <div className="col-md-6 info">
                   <div className="row title">

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import UserStore from '../../store/UserStore.js';
-import CartStore from '../../store/CartStore.js';
+import UserStore from '../../store/userStore.js';
+import CartStore from '../../store/cartStore.js';
 import './layout.style.css';
 
-const AppNavBar = () => {
+export const AppNavBar = () => {
   const [visible, setVisible] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
@@ -167,5 +167,3 @@ const AppNavBar = () => {
     </>
   );
 };
-
-export default AppNavBar;

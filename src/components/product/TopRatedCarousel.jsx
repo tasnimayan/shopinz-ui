@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
-import ProductStore from '../../store/ProductStore';
+import ProductStore from '../../store/productStore';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';

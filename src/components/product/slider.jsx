@@ -1,4 +1,4 @@
-import ProductStore from '../../store/ProductStore.js';
+import ProductStore from '../../store/productStore.js';
 import SliderSkeleton from '../../skeleton/slider-skeleton.jsx';
 import { Link } from 'react-router-dom';
 
@@ -12,10 +12,7 @@ const Slider = () => {
   } else {
     return (
       <div>
-        <div
-          id="carouselExampleDark"
-          className="carousel bg carousel-dark slide"
-        >
+        <div id="carouselExampleDark" className="carousel bg carousel-dark slide">
           <div className="carousel-indicators">
             {SliderList.map((item, i) => {
               return (
@@ -48,31 +45,17 @@ const Slider = () => {
                   <div className="container ">
                     <div className="row justify-content-center">
                       <div className="col-12 col-lg-5 col-sm-12 col-md-5 p-5">
-                        <h1 className="headline-1 text-teal fw-bold">
-                          {item['title']}
-                        </h1>
+                        <h1 className="headline-1 text-teal fw-bold">{item['title']}</h1>
                         <p>{item['des']}</p>
-                        <Link
-                          to=""
-                          className="btn btn-theme"
-                          style={{ width: '130px' }}
-                        >
+                        <Link to="/men" className="btn btn-theme" style={{ width: '130px' }}>
                           Men
                         </Link>
-                        <Link
-                          to=""
-                          className="btn btn-theme ms-2"
-                          style={{ width: '130px' }}
-                        >
+                        <Link to="/women" className="btn btn-theme ms-2" style={{ width: '130px' }}>
                           Women
                         </Link>
                       </div>
                       <div className="col-12 col-lg-5 col-sm-12 col-md-5 p-5">
-                        <img
-                          src={item['image'] ? BASE_URL + item['image'] : ''}
-                          className="w-100"
-                          alt="..."
-                        />
+                        <img src={item['image'] ? BASE_URL + item['image'] : ''} className="w-100" alt="..." />
                       </div>
                     </div>
                   </div>
@@ -86,10 +69,7 @@ const Slider = () => {
             data-bs-target="#carouselExampleDark"
             data-bs-slide="prev"
           >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -98,10 +78,7 @@ const Slider = () => {
             data-bs-target="#carouselExampleDark"
             data-bs-slide="next"
           >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>

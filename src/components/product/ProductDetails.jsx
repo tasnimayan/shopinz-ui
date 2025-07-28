@@ -1,5 +1,5 @@
 import ProductImages from './ProductImages.jsx';
-import ProductStore from '../../store/ProductStore.js';
+import ProductStore from '../../store/productStore.js';
 import DetailsSkeleton from '../../skeleton/details-skeleton.jsx';
 import parse from 'html-react-parser';
 import { useEffect } from 'react';

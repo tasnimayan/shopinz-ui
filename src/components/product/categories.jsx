@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductStore from '../../store/ProductStore.js';
+import ProductStore from '../../store/productStore.js';
 import CategoriesSkeleton from '../../skeleton/categories-skeleton.jsx';
 import { Link } from 'react-router-dom';
 import SectionHeadline from './SectionHeadline.jsx';

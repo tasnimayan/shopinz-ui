@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import cartStore from '../../store/CartStore.js';
+import cartStore from '../../store/cartStore.js';
 import LegalContentSkeleton from '../../skeleton/legal-content-skeleton.jsx';
 
 import '../../assets/css/cartList.style.css';
-import FullPageLoader from '../../skeleton/FullPageLoader.jsx';
+import FullPageLoader from '../../skeleton/full-page-loader.jsx';
 
 const CartList = () => {
   const [quantity, SetQuantity] = useState(1);

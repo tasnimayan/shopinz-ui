@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import CartStore from '../../store/CartStore.js';
-import WishStore from '../../store/WishStore.js';
+import CartStore from '../../store/cartStore.js';
+import WishStore from '../../store/wishStore.js';
 import toast from 'react-hot-toast';
 import StarRatings from 'react-star-ratings';
 import '../../assets/css/product-details.style.css';
