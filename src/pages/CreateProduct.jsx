@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import ProductStore from '../store/productStore';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/RootLayout.jsx';
 
 const CreateProduct = () => {
   const { CategoryList, CategoryListRequest } = ProductStore();

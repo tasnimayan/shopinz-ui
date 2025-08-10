@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import ProductStore from '../store/productStore.js';
 import { useEffect } from 'react';
 import { ProductDetails } from '../components/product/ProductDetails.jsx';
-import Layout from '../components/layout/Layout.jsx';
+import Layout from '../components/layout/RootLayout.jsx';
 import Brands from '../components/product/Brands.jsx';
 
 export default function ProductDetailsPage() {

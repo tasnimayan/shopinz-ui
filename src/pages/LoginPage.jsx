@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout.jsx';
+import Layout from '../components/layout/RootLayout.jsx';
 import LoginForm from '../components/user/LoginForm.jsx';
 
 const LoginPage = () => {

@@ -43,6 +43,15 @@ const LoginForm = () => {
               className="form-control"
             />
             <UserSubmitButton onClick={onFormSubmit} className="btn mt-3 btn-success" text="Login" />
+            <div className="mt-4 p-3 bg-light rounded">
+              <small className="text-muted">
+                <strong>Test Credentials:</strong>
+                <br />
+                Email: testuser@gmail.com
+                <br />
+                Password: testuser121
+              </small>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/RootLayout';
 import { useSearchParams } from 'react-router-dom';
 
 const OrderStatusPage = () => {

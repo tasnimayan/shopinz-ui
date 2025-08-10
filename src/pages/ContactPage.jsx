@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from '../components/layout/Layout.jsx';
+import Layout from '../components/layout/RootLayout.jsx';
 import { toast } from 'react-hot-toast';
 
 const ContactPage = () => {

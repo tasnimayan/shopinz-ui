@@ -3,7 +3,7 @@ import { AppNavBar } from './AppNavBar';
 import { Footer } from './Footer';
 import { Toaster } from 'react-hot-toast';
 
-const Layout = (props) => {
+const RootLayout = (props) => {
   return (
     <>
       <AppNavBar />
@@ -14,4 +14,4 @@ const Layout = (props) => {
   );
 };
 
-export default Layout;
+export default RootLayout;

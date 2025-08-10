@@ -11,7 +11,7 @@ export const AppNavBar = () => {
   const pathname = useLocation().pathname;
   const { isLogin, UserLogoutRequest } = UserStore();
   const { CartCount, CartListRequest } = CartStore();
-  console.log(pathname);
+
   const onLogout = async () => {
     await UserLogoutRequest();
     sessionStorage.clear();
