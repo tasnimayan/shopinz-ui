@@ -1,7 +1,7 @@
 import './profileDetails.style.css';
 import UserStore from '../../store/userStore.js';
 import { useEffect } from 'react';
-import ProfileSkeleton from '../../skeleton/profile-skeleton.jsx';
+import ProfileSkeleton from '../../skeleton/ProfileSkeleton.jsx';
 
 const ProfileDetails = () => {
   let { ProfileDetails, ProfileDetailsRequest, OrderDetails, OrderDetailsRequest } = UserStore();

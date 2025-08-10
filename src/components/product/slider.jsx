@@ -1,5 +1,5 @@
 import ProductStore from '../../store/productStore.js';
-import SliderSkeleton from '../../skeleton/slider-skeleton.jsx';
+import SliderSkeleton from '../../skeleton/SliderSkeleton.jsx';
 import { Link } from 'react-router-dom';
 
 const BASE_URL = import.meta.env.VITE_API_URL;

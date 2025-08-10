@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import cartStore from '../../store/cartStore.js';
-import LegalContentSkeleton from '../../skeleton/legal-content-skeleton.jsx';
+import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
 
 const InvoiceList = () => {
   const { InvoiceListRequest, InvoiceList } = cartStore();

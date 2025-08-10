@@ -1,6 +1,6 @@
 import ProductImages from './ProductImages.jsx';
 import ProductStore from '../../store/productStore.js';
-import DetailsSkeleton from '../../skeleton/details-skeleton.jsx';
+import DetailsSkeleton from '../../skeleton/DetailsSkeleton.jsx';
 import parse from 'html-react-parser';
 import { useEffect } from 'react';
 import Reviews from './Reviews.jsx';

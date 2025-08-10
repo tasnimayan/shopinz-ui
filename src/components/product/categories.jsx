@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductStore from '../../store/productStore.js';
-import CategoriesSkeleton from '../../skeleton/categories-skeleton.jsx';
+import CategoriesSkeleton from '../../skeleton/CategoriesSkeleton.jsx';
 import { Link } from 'react-router-dom';
 import SectionHeadline from './SectionHeadline.jsx';
 

@@ -3,7 +3,7 @@ import WishStore from '../../store/wishStore.js';
 import CartStore from '../../store/cartStore.js';
 import '../../assets/css/cartList.style.css';
 import { toast } from 'react-hot-toast';
-import FullPageLoader from '../../skeleton/full-page-loader.jsx';
+import FullPageLoader from '../../skeleton/FullPageLoader.jsx';
 import { Link } from 'react-router-dom';
 
 const WishLists = () => {

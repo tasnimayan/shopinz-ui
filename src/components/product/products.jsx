@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductStore from '../../store/productStore.js';
-import ProductsSkeleton from '../../skeleton/products-skeleton.jsx';
+import ProductsSkeleton from '../../skeleton/ProductsSkeleton.jsx';
 import ProductCard from './ProductCard.jsx';
 import SectionHeadline from './SectionHeadline.jsx';
 import { useState } from 'react';

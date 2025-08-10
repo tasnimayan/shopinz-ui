@@ -69,7 +69,6 @@ const ProductStore = create((set) => ({
     try {
       const filteredFilters = Object.fromEntries(Object.entries(filters).filter(([key, value]) => value));
       const queryParams = new URLSearchParams(filteredFilters).toString();
-      console.log(filters);
       let res = await axios.get(`/api/v1/products?${queryParams}`);
       if (res.data['status'] === 'success') {
         set({ productList: res.data['data'] });

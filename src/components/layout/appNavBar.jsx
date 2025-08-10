@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import UserStore from '../../store/userStore.js';
 import CartStore from '../../store/cartStore.js';
 import './layout.style.css';
@@ -8,9 +8,10 @@ export const AppNavBar = () => {
   const [visible, setVisible] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
+  const pathname = useLocation().pathname;
   const { isLogin, UserLogoutRequest } = UserStore();
   const { CartCount, CartListRequest } = CartStore();
-
+  console.log(pathname);
   const onLogout = async () => {
     await UserLogoutRequest();
     sessionStorage.clear();
@@ -34,6 +35,7 @@ export const AppNavBar = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
   return (
     <>
       {/* Header Bar */}
@@ -155,7 +157,7 @@ export const AppNavBar = () => {
                 { path: '/remark/trending', label: 'Trending' },
               ].map(({ path, label }) => (
                 <li className="nav-item me-4" key={label}>
-                  <Link className="nav-link" to={path}>
+                  <Link className={`nav-link ${pathname === path ? 'text-primary font-weight-bold' : ''}`} to={path}>
                     {label}
                   </Link>
                 </li>

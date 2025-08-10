@@ -1,5 +1,5 @@
 import UserStore from '../../store/userStore.js';
-import ProfileSkeleton from '../../skeleton/profile-skeleton.jsx';
+import ProfileSkeleton from '../../skeleton/ProfileSkeleton.jsx';
 import React, { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
