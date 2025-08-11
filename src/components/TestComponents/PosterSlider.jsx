@@ -39,10 +39,22 @@ const PosterSlider = () => {
             <img src={poster[position]} className="d-block w-100 object-fit-cover" alt="..." />
           </div>
         </div>
-        <div className="carousel-control-prev" onClick={leftClick} role="button">
+        <div
+          className="carousel-control-prev"
+          onClick={leftClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && leftClick()}
+        >
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         </div>
-        <div className="carousel-control-next" onClick={rightClick} role="button">
+        <div
+          className="carousel-control-next"
+          onClick={rightClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && rightClick()}
+        >
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
         </div>
       </div>

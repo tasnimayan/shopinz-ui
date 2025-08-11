@@ -1,6 +1,6 @@
-import UserStore from '../../store/userStore.js';
+import UserStore from '../../store/UserStore.js';
 import ProfileSkeleton from '../../skeleton/ProfileSkeleton.jsx';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
 const ProfileForm = () => {
@@ -10,7 +10,7 @@ const ProfileForm = () => {
     (async () => {
       await ProfileDetailsRequest();
     })();
-  }, []);
+  }, [ProfileDetailsRequest]);
 
   const Save = async () => {
     let res = await ProfileSaveRequest(ProfileForm);
@@ -31,7 +31,9 @@ const ProfileForm = () => {
           <div className="row mb-4">
             <div className="row mb-4">
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer Name </label>
+                <label className="form-label" htmlFor="cus_name">
+                  Customer Name{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_name}
                   onChange={(e) => {
@@ -42,7 +44,9 @@ const ProfileForm = () => {
                 />
               </div>
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer Phone </label>
+                <label className="form-label" htmlFor="cus_phone">
+                  Customer Phone{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_phone}
                   onChange={(e) => {
@@ -54,7 +58,9 @@ const ProfileForm = () => {
               </div>
 
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer Fax </label>
+                <label className="form-label" htmlFor="cus_fax">
+                  Customer Fax{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_fax}
                   onChange={(e) => {
@@ -65,7 +71,9 @@ const ProfileForm = () => {
                 />
               </div>
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer Country </label>
+                <label className="form-label" htmlFor="cus_country">
+                  Customer Country{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_country}
                   onChange={(e) => {
@@ -76,7 +84,9 @@ const ProfileForm = () => {
                 />
               </div>
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer City </label>
+                <label className="form-label" htmlFor="cus_city">
+                  Customer City{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_city}
                   onChange={(e) => {
@@ -87,7 +97,9 @@ const ProfileForm = () => {
                 />
               </div>
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer State </label>
+                <label className="form-label" htmlFor="cus_state">
+                  Customer State{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_state}
                   onChange={(e) => {
@@ -98,7 +110,9 @@ const ProfileForm = () => {
                 />
               </div>
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer Post Code </label>
+                <label className="form-label" htmlFor="cus_postcode">
+                  Customer Post Code{' '}
+                </label>
                 <input
                   value={ProfileForm.cus_postcode}
                   onChange={(e) => {
@@ -109,7 +123,9 @@ const ProfileForm = () => {
                 />
               </div>
               <div className="col-md-4 p-2">
-                <label className="form-label">Customer Address</label>
+                <label className="form-label" htmlFor="cus_add">
+                  Customer Address
+                </label>
                 <input
                   value={ProfileForm.cus_add}
                   onChange={(e) => {
@@ -126,7 +142,9 @@ const ProfileForm = () => {
           <hr />
           <div className="row">
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping Name </label>
+              <label className="form-label" htmlFor="ship_name">
+                Shipping Name{' '}
+              </label>
               <input
                 value={ProfileForm.ship_name}
                 onChange={(e) => {
@@ -137,7 +155,9 @@ const ProfileForm = () => {
               />
             </div>
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping Phone </label>
+              <label className="form-label" htmlFor="ship_phone">
+                Shipping Phone{' '}
+              </label>
               <input
                 value={ProfileForm.ship_phone}
                 onChange={(e) => {
@@ -148,7 +168,9 @@ const ProfileForm = () => {
               />
             </div>
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping Country </label>
+              <label className="form-label" htmlFor="ship_country">
+                Shipping Country{' '}
+              </label>
               <input
                 value={ProfileForm.ship_country}
                 onChange={(e) => {
@@ -159,7 +181,9 @@ const ProfileForm = () => {
               />
             </div>
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping City </label>
+              <label className="form-label" htmlFor="ship_city">
+                Shipping City{' '}
+              </label>
               <input
                 value={ProfileForm.ship_city}
                 onChange={(e) => {
@@ -170,7 +194,9 @@ const ProfileForm = () => {
               />
             </div>
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping State </label>
+              <label className="form-label" htmlFor="ship_state">
+                Shipping State{' '}
+              </label>
               <input
                 value={ProfileForm.ship_state}
                 onChange={(e) => {
@@ -181,7 +207,9 @@ const ProfileForm = () => {
               />
             </div>
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping Post Code </label>
+              <label className="form-label" htmlFor="ship_postcode">
+                Shipping Post Code{' '}
+              </label>
               <input
                 value={ProfileForm.ship_postcode}
                 onChange={(e) => {
@@ -192,7 +220,9 @@ const ProfileForm = () => {
               />
             </div>
             <div className="col-md-4 p-2">
-              <label className="form-label">Shipping Address</label>
+              <label className="form-label" htmlFor="ship_add">
+                Shipping Address
+              </label>
               <input
                 value={ProfileForm.ship_add}
                 onChange={(e) => {

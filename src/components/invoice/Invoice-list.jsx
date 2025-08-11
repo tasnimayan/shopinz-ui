@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import cartStore from '../../store/cartStore.js';
+import { useEffect } from 'react';
+import cartStore from '../../store/CartStore.js';
 import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
 
 const InvoiceList = () => {
@@ -9,7 +9,7 @@ const InvoiceList = () => {
     (async () => {
       await InvoiceListRequest();
     })();
-  }, []);
+  }, [InvoiceListRequest]);
 
   if (InvoiceList === null) {
     return <LegalContentSkeleton />;
@@ -20,7 +20,7 @@ const InvoiceList = () => {
           <ul>
             {InvoiceList.map((item, i) => {
               return (
-                <li>
+                <li key={i}>
                   <p>Invoice No: {item['tran_id']}</p>
                   <p>Total Payable: {item['payable']}</p>
                   <p>Cus Details: {item['cus_details']}</p>

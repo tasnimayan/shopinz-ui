@@ -1,5 +1,4 @@
-import React from 'react';
-import ProductStore from '../../store/productStore.js';
+import ProductStore from '../../store/ProductStore.js';
 import CategoriesSkeleton from '../../skeleton/CategoriesSkeleton.jsx';
 import { Link } from 'react-router-dom';
 import SectionHeadline from './SectionHeadline.jsx';

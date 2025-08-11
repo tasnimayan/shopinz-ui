@@ -1,4 +1,3 @@
-import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import Lottie from 'lottie-react';
 import ImagePlaceholder from '../assets/images/image.json';

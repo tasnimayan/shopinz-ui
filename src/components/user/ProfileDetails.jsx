@@ -1,5 +1,5 @@
 import './profileDetails.style.css';
-import UserStore from '../../store/userStore.js';
+import UserStore from '../../store/UserStore.js';
 import { useEffect } from 'react';
 import ProfileSkeleton from '../../skeleton/ProfileSkeleton.jsx';
 
@@ -11,7 +11,7 @@ const ProfileDetails = () => {
       await ProfileDetailsRequest();
       await OrderDetailsRequest();
     })();
-  }, []);
+  }, [ProfileDetailsRequest, OrderDetailsRequest]);
 
   if (!ProfileDetails) {
     return <ProfileSkeleton />;
@@ -23,22 +23,20 @@ const ProfileDetails = () => {
         <div className="profile-nav col-md-3">
           <div className="panel">
             <div className="user-heading round ">
-              <a href="#">
-                <img src="/src/assets/images/avatar.png" alt="" />
-              </a>
+              <img src="/src/assets/images/avatar.png" alt="" />
               <h1>{ProfileDetails.details.cus_name}</h1>
               <p>{ProfileDetails.email ?? ''}</p>
             </div>
             <ul className="nav flex-column nav-pills">
               <li className="">
-                <a href="#">
+                <button type="button">
                   <i className="bi bi-person"></i> Profile
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#">
+                <button type="button">
                   <i className="bi bi-pencil-square"></i>Edit profile
-                </a>
+                </button>
               </li>
             </ul>
           </div>

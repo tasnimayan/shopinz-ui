@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
-import { unauthorized } from '../utility/utility.js';
+import { unauthorized } from '../utility/Utility.js';
 
 const CartStore = create((set) => ({
   isCartSubmit: false,
@@ -78,7 +78,6 @@ const CartStore = create((set) => ({
       set({ InvoiceList: res.data['data'] });
     } catch (e) {
       unauthorized(e.response.status);
-    } finally {
     }
   },
 }));

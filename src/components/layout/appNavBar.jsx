@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import UserStore from '../../store/userStore.js';
-import CartStore from '../../store/cartStore.js';
+import UserStore from '../../store/UserStore.js';
+import CartStore from '../../store/CartStore.js';
 import './layout.style.css';
 
 export const AppNavBar = () => {
@@ -34,7 +34,7 @@ export const AppNavBar = () => {
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [isLogin, CartListRequest]);
 
   return (
     <>
@@ -107,13 +107,18 @@ export const AppNavBar = () => {
 
               {isLogin() ? (
                 <div className=" position-relative mx-3">
-                  <img
-                    src="./src/assets/images/profile_placeholder.png"
+                  <button
+                    type="button"
+                    className="rounded-circle border-0 bg-transparent"
                     onClick={() => setVisible((v) => !v)}
-                    className="border border-2 rounded-circle object-fit-cover border-secondary border-opacity-25"
-                    style={{ width: 40, height: 40, cursor: 'pointer' }}
-                    alt="User"
-                  />
+                  >
+                    <img
+                      src="./src/assets/images/profile_placeholder.png"
+                      className="border border-2 rounded-circle object-fit-cover border-secondary border-opacity-25"
+                      style={{ width: 40, height: 40, cursor: 'pointer' }}
+                      alt="User"
+                    />
+                  </button>
 
                   {visible ? (
                     <div

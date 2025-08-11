@@ -1,4 +1,4 @@
-import FeatureStore from '../../store/featureStore.js';
+import FeatureStore from '../../store/FeatureStore.js';
 import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
 import parse from 'html-react-parser';
 const LegalContents = () => {

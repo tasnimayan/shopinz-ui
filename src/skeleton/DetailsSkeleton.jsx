@@ -1,4 +1,3 @@
-import React from 'react';
 import Lottie from 'lottie-react';
 import ImagePlaceholder from '../assets/images/image.json';
 import Skeleton from 'react-loading-skeleton';
@@ -11,22 +10,14 @@ const DetailsSkeleton = () => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-6">
-                <Lottie
-                  className="w-100"
-                  animationData={ImagePlaceholder}
-                  loop={true}
-                />
+                <Lottie className="w-100" animationData={ImagePlaceholder} loop={true} />
               </div>
             </div>
             <div className="row justify-content-center">
               {Array.from({ length: 4 }).map((item, index) => {
                 return (
                   <div className="col-2" key={index}>
-                    <Lottie
-                      className="w-100"
-                      animationData={ImagePlaceholder}
-                      loop={true}
-                    />
+                    <Lottie className="w-100" animationData={ImagePlaceholder} loop={true} />
                   </div>
                 );
               })}

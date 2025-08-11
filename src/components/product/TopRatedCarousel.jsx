@@ -1,19 +1,19 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
-import ProductStore from '../../store/productStore';
+import ProductStore from '../../store/ProductStore';
+import { useEffect, memo } from 'react';
+import SectionHeadline from './SectionHeadline';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { useEffect, memo } from 'react';
-import SectionHeadline from './SectionHeadline';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 const TopRatedSlide = memo(({ item }) => (
-  <div className="card">
+  <div className="card" key={item._id}>
     <Link to={`/products/${item._id}`} className="w-100">
       <div className="card-body rounded-1" style={{ backgroundColor: '#f8f9fa' }}>
         <div className="row d-flex align-items-center text-start">
@@ -40,6 +40,7 @@ const TopRatedSlide = memo(({ item }) => (
     </Link>
   </div>
 ));
+TopRatedSlide.displayName = 'TopRatedSlide';
 
 const TopTrendingCarousel = () => {
   const { ListByRating, ListByRatingRequest } = ProductStore();

@@ -9,13 +9,10 @@ const RemarkProducts = React.lazy(() => import('./components/product/RemarkProdu
 const HomePage = React.lazy(() => import('./pages/HomePage.jsx'));
 const ProductDetails = React.lazy(() => import('./pages/ProductDetailsPage.jsx'));
 const ProductByBrand = React.lazy(() => import('./pages/ProductByBrand.jsx'));
-const RefundPage = React.lazy(() => import('./pages/RefundPage.jsx'));
 const PrivacyPage = React.lazy(() => import('./pages/PrivacyPage.jsx'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage.jsx'));
-const TermsPage = React.lazy(() => import('./pages/TermsPage.jsx'));
 const HowToBuyPage = React.lazy(() => import('./pages/HowToBuyPage.jsx'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage.jsx'));
-const ComplainPage = React.lazy(() => import('./pages/ComplainPage.jsx'));
 const LoginPage = React.lazy(() => import('./pages/LoginPage.jsx'));
 const OtpPage = React.lazy(() => import('./pages/OtpPage.jsx'));
 const ProfilePage = React.lazy(() => import('./pages/ProfilePage.jsx'));
@@ -50,13 +47,10 @@ export const routes = [
 
   // Info Pages
   { path: '/about', element: <AboutPage /> },
-  { path: '/refund', element: <RefundPage /> },
   { path: '/privacy', element: <PrivacyPage /> },
-  { path: '/terms', element: <TermsPage /> },
   { path: '/faq', element: <FAQPage /> },
   { path: '/how-to-buy', element: <HowToBuyPage /> },
   { path: '/contact', element: <ContactPage /> },
-  { path: '/complain', element: <ComplainPage /> },
   { path: '/orders/status', element: <OrderStatusPage /> },
 
   // Seller

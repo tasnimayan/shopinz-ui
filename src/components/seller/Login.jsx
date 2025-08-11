@@ -1,8 +1,7 @@
-import React from 'react';
-import ValidationHelper from '../../utility/validation-helper.js';
+import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import sellerStore from '../../store/sellerStore.js';
+import sellerStore from '../../store/SellerStore.js';
 import TopNav from './TopNav.jsx';
 
 const LoginForm = () => {

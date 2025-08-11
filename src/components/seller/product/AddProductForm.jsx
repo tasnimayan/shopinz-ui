@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import ProductStore from '../../../store/productStore';
-import sellerStore from '../../../store/sellerStore';
+import ProductStore from '../../../store/ProductStore';
+import sellerStore from '../../../store/SellerStore';
 import { toast } from 'react-hot-toast';
 
 const AddProductForm = () => {
@@ -19,16 +19,12 @@ const AddProductForm = () => {
     }
   };
 
-  const handleClearFile = () => {
-    setFile(null);
-  };
-
   useEffect(() => {
     (async () => {
       await CategoryListRequest();
       await BrandListRequest();
     })();
-  }, []);
+  }, [CategoryListRequest, BrandListRequest]);
 
   const publishProduct = async (e) => {
     e.preventDefault();
@@ -96,7 +92,6 @@ const AddProductForm = () => {
               <h4 className="mb-3">Display images</h4>
               <div
                 role="presentation"
-                tabIndex="0"
                 className="mb-3 border-1 border-dark-subtle rounded-3 py-4"
                 style={{ borderStyle: 'dashed' }}
               >
@@ -516,9 +511,10 @@ const AddProductForm = () => {
                                   tabIndex="0"
                                   type="text"
                                   aria-autocomplete="list"
-                                  aria-expanded="false"
                                   aria-haspopup="true"
                                   role="combobox"
+                                  aria-controls="react-select-6-listbox"
+                                  aria-expanded="false"
                                 />
                               </div>
                             </div>

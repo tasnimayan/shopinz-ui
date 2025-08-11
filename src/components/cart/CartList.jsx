@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import cartStore from '../../store/cartStore.js';
+import { useEffect, useState } from 'react';
+import cartStore from '../../store/CartStore.js';
 import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
 
 import '../../assets/css/cartList.style.css';
@@ -22,7 +22,7 @@ const CartList = () => {
     (async () => {
       await CartListRequest();
     })();
-  }, []);
+  }, [CartListRequest]);
 
   const incrementQuantity = () => {
     SetQuantity((quantity) => quantity + 1);
@@ -78,7 +78,7 @@ const CartList = () => {
               <div className="row border-bottom" key={idx}>
                 <div className="row main align-items-center">
                   <div className="col-2">
-                    <img className="img-fluid cart-img" src={item.product.image} />
+                    <img className="img-fluid cart-img" src={item.product.image} alt={item.product.title} />
                   </div>
                   <div className="col-5">
                     {/* <div className="row text-muted">Shirt</div> */}

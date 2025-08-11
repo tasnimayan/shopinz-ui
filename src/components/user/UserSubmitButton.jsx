@@ -1,5 +1,4 @@
-import React from 'react';
-import UserStore from '../../store/userStore.js';
+import UserStore from '../../store/UserStore.js';
 
 const UserSubmitButton = (props) => {
   let { isFormSubmit } = UserStore();

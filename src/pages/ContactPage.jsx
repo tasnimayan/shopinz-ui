@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
 import { toast } from 'react-hot-toast';
 
@@ -36,6 +36,7 @@ const ContactPage = () => {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="Google Map"
             ></iframe>
           </div>
 

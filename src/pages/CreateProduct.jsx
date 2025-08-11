@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import ProductStore from '../store/productStore';
+import ProductStore from '../store/ProductStore.js';
 import Layout from '../components/layout/RootLayout.jsx';
+import SellerStore from '../store/SellerStore.js';
 
 const CreateProduct = () => {
   const { CategoryList, CategoryListRequest } = ProductStore();
+  const { CreateProductRequest } = SellerStore();
   const [product, setProduct] = useState({
     title: '',
     shortDes: '',
@@ -25,7 +27,7 @@ const CreateProduct = () => {
     (async () => {
       CategoryList === null ? await CategoryListRequest() : null;
     })();
-  }, []);
+  }, [CategoryList, CategoryListRequest]);
 
   // On submitting the form
   const handleSubmit = async (e) => {
@@ -44,7 +46,7 @@ const CreateProduct = () => {
         data.append('photos', product.photos[i]);
       }
 
-      const response = await createProduct(data);
+      const response = await CreateProductRequest(data);
       setProduct({ title: '', description: '', categoryId: '', status: '', manufacturer: '', photos: [] });
 
       toast.success(response.data.message);
@@ -63,7 +65,9 @@ const CreateProduct = () => {
             <form className="form-horizontal">
               <div className="form-group mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Title :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="name">
+                    Title :
+                  </label>
                   <div className="col-md-9">
                     <input
                       className="form-control"
@@ -78,7 +82,9 @@ const CreateProduct = () => {
               </div>
               <div className="form-group mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Description :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="description">
+                    Description :
+                  </label>
                   <div className="col-md-9">
                     <textarea
                       rows="4"
@@ -93,7 +99,9 @@ const CreateProduct = () => {
               </div>
               <div className="form-group mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Category :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="category">
+                    Category :
+                  </label>
                   <div className="col-md-9">
                     <select
                       className="form-select form-custom"
@@ -114,7 +122,9 @@ const CreateProduct = () => {
               </div>
               <div className="form-group custom-autocomplete mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Price :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="price">
+                    Price :
+                  </label>
                   <div className="col-md-9">
                     <input
                       className="form-control"
@@ -129,14 +139,16 @@ const CreateProduct = () => {
 
               <div className="form-group mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Discount :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="isDiscount">
+                    Discount :
+                  </label>
                   <div className="col-md-9">
-                    <input class="form-check-input fs-6" type="radio" name="isDiscount" id="isDiscount" />
-                    <label class="form-check-label mx-2" htmlFor="isDiscount">
+                    <input className="form-check-input fs-6" type="radio" name="isDiscount" id="isDiscount" />
+                    <label className="form-check-label mx-2" htmlFor="isDiscount">
                       Yes
                     </label>
-                    <input class="form-check-input ms-4 fs-6" type="radio" name="isDiscount" id="isDiscount" />
-                    <label class="form-check-label mx-2" htmlFor="isDiscount">
+                    <input className="form-check-input ms-4 fs-6" type="radio" name="isDiscount" id="isDiscount" />
+                    <label className="form-check-label mx-2" htmlFor="isDiscount">
                       No
                     </label>
                   </div>
@@ -145,7 +157,9 @@ const CreateProduct = () => {
 
               <div className="form-group custom-autocomplete mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Discount Price :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="discountPrice">
+                    Discount Price :
+                  </label>
                   <div className="col-md-9">
                     <input
                       className="form-control"
@@ -160,7 +174,9 @@ const CreateProduct = () => {
 
               <div className="form-group mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Status :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="status">
+                    Status :
+                  </label>
                   <div className="col-md-9">
                     <select
                       className="form-select form-custom"
@@ -177,7 +193,9 @@ const CreateProduct = () => {
               </div>
               <div className="form-group custom-autocomplete mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Manufacturer :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="manufacturer">
+                    Manufacturer :
+                  </label>
                   <div className="col-md-9">
                     <input
                       className="form-control"
@@ -190,7 +208,9 @@ const CreateProduct = () => {
               </div>
               <div className="form-group mb-4">
                 <div className="row lh-1">
-                  <label className="col-md-3 fs-6 fw-semibold">Image :</label>
+                  <label className="col-md-3 fs-6 fw-semibold" htmlFor="photos">
+                    Image :
+                  </label>
                   <div className="col-md-9">
                     <input
                       className="form-control"

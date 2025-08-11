@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductStore from '../../store/productStore.js';
+import ProductStore from '../../store/ProductStore.js';
 import ProductsSkeleton from '../../skeleton/ProductsSkeleton.jsx';
 import ProductCard from './ProductCard.jsx';
 
@@ -15,7 +15,7 @@ const ProductList = () => {
   if (!productList?.products?.length) {
     return <div>No products found</div>;
   }
-  const { total, page, totalPages, products } = productList;
+  const { products } = productList;
 
   return (
     <div className="row">

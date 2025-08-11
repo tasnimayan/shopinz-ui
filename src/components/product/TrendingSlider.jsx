@@ -1,7 +1,7 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
-import ProductStore from '../../store/productStore';
+import ProductStore from '../../store/ProductStore';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -45,6 +45,7 @@ const TrendingSlider = () => {
                       <img
                         className="w-100 h-100 rounded-top-2 object-fit-cover"
                         src={item.image ? BASE_URL + item.image : ''}
+                        alt={item.title}
                       />
                     </div>
                     <div className="card-body px-2 py-2">

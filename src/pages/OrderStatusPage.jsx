@@ -2,7 +2,7 @@ import Layout from '../components/layout/RootLayout';
 import { useSearchParams } from 'react-router-dom';
 
 const OrderStatusPage = () => {
-  const [searchParam, setSearchParam] = useSearchParams();
+  const [searchParam] = useSearchParams();
   let payment = searchParam.get('payment');
   let pageObject = {
     bgColor: '',

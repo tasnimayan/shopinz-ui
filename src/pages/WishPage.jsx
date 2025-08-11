@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
 import WishLists from '../components/wish/WishList.jsx';
 

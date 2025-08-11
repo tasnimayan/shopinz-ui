@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import sellerStore from '../../store/sellerStore';
+import sellerStore from '../../store/SellerStore';
 const ProductRow = ({ product }) => {
   let [show, setShow] = useState(false);
 
@@ -58,24 +58,19 @@ const ProductRow = ({ product }) => {
             </button>
 
             <div
-              x-placement="top-end"
+              data-bs-placement="top-end"
               className={`py-2 dropdown-menu dropdown-menu-end position-absolute ${show ? 'show' : null}`}
               style={{ inset: `0px 0px auto auto`, transform: `translate(0px, 35px)` }}
             >
-              <a className="dropdown-item" role="button" tabIndex="0" href="#">
+              <a className="dropdown-item" role="button" tabIndex="0" href="/seller/products">
                 <i className="bi bi-eye me-2"></i>View
               </a>
-              <a className="dropdown-item" role="button" tabIndex="0" href="#">
+              <a className="dropdown-item" role="button" tabIndex="0" href="/seller/products">
                 <i className="bi bi-pencil-square me-2" />
                 Update
               </a>
-              <hr className="dropdown-divider" role="separator" />
-              <button
-                className="text-danger dropdown-item"
-                role="button"
-                tabIndex="0"
-                onClick={() => onDelete(product._id)}
-              >
+              <hr className="dropdown-divider" />
+              <button className="text-danger dropdown-item" type="button" onClick={() => onDelete(product._id)}>
                 <i className="bi bi-trash me-2" />
                 Remove
               </button>

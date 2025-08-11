@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import SellerStore from './../../store/sellerStore';
-import ValidationHelper from '../../utility/validation-helper';
+import SellerStore from '../../store/SellerStore';
+import ValidationHelper from '../../utility/ValidationHelper';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import TopNav from './TopNav';

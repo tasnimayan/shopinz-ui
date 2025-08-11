@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import ProductStore from '../store/productStore.js';
+import { useEffect, useState, useCallback } from 'react';
+import ProductStore from '../store/ProductStore.js';
 import { useSearchParams } from 'react-router-dom';
 import Layout from '../components/layout/RootLayout.jsx';
 import PropTypes from 'prop-types';
-import { useCallback } from 'react';
 import ProductList from '../components/product/ProductList.jsx';
 import toast from 'react-hot-toast';
 
@@ -85,12 +84,13 @@ const ProductsPage = ({ categoryId, remarkType }) => {
     } catch (err) {
       toast.error('Error fetching products:', err);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, search, brand, category, queryRemark, remarkType, BrandList, CategoryList]);
 
   useEffect(() => {
     if (queryCategory) setCategory(queryCategory);
-
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchData, searchParams]);
 
   const handleFilterChange = useCallback((name, value) => {

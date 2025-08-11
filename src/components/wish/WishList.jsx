@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import WishStore from '../../store/wishStore.js';
-import CartStore from '../../store/cartStore.js';
+import { useEffect } from 'react';
+import WishStore from '../../store/WishStore.js';
+import CartStore from '../../store/CartStore.js';
 import '../../assets/css/cartList.style.css';
 import { toast } from 'react-hot-toast';
 import FullPageLoader from '../../skeleton/FullPageLoader.jsx';
@@ -14,6 +14,7 @@ const WishLists = () => {
     (async () => {
       await WishListRequest();
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [WishCount]);
 
   const AddToCart = async (id) => {
@@ -57,7 +58,7 @@ const WishLists = () => {
               <div className="row border-bottom" key={idx}>
                 <div className="row main align-items-center">
                   <div className="col-2">
-                    <img className="img-fluid cart-img" src={item.image} />
+                    <img className="img-fluid cart-img" src={item.image} alt="" />
                   </div>
                   <div className="col">
                     <Link to={`/products/${item._id}`}>

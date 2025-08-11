@@ -1,8 +1,4 @@
 class ValidationHelper {
-  static IsLater(value) {
-    let OnlyLaterRegx = /^[A-Za-z\'\s\.\,\-\!\@\#\$\%\^\&\*\(\)\[\]\{\}\:\;\"\<\>\?\/\+\=\_\\\|`\~]+$/;
-    return OnlyLaterRegx.test(value);
-  }
   static IsEmail(value) {
     let EmailRegx = /\S+@\S+\.\S+/;
     return EmailRegx.test(value);

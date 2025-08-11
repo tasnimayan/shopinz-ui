@@ -1,10 +1,8 @@
-import React from 'react';
-import ProductStore from '../../store/productStore.js';
+import ProductStore from '../../store/ProductStore.js';
 import ProductsSkeleton from '../../skeleton/ProductsSkeleton.jsx';
 import ProductCard from './ProductCard.jsx';
 import SectionHeadline from './SectionHeadline.jsx';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const TAB_CONFIG = [
   { label: 'All Products', key: 'new' },

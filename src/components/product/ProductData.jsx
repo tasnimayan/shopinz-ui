@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import CartStore from '../../store/cartStore.js';
-import WishStore from '../../store/wishStore.js';
+import CartStore from '../../store/CartStore.js';
+import WishStore from '../../store/WishStore.js';
 import toast from 'react-hot-toast';
 import StarRatings from 'react-star-ratings';
 import '../../assets/css/product-details.style.css';
@@ -108,7 +108,9 @@ export const ProductData = ({ data }) => {
       {/* Color Selection */}
       {colors.length > 0 && (
         <div className="mb-2">
-          <label className="form-label fw-bold">Color:</label>
+          <label htmlFor="color" className="form-label fw-bold">
+            Color:
+          </label>
           <div className="d-flex gap-2 flex-wrap">
             {colors.map((color) => (
               <button
@@ -127,7 +129,9 @@ export const ProductData = ({ data }) => {
       {/* Size Selection */}
       {sizes.length > 0 && (
         <div className="mb-2">
-          <label className="form-label fw-bold">Size:</label>
+          <label htmlFor="size" className="form-label fw-bold">
+            Size:
+          </label>
           <div className="d-flex gap-2 flex-wrap">
             {sizes.map((size) => (
               <button
@@ -144,7 +148,9 @@ export const ProductData = ({ data }) => {
 
       {/* Quantity */}
       <div className="mb-3">
-        <label className="form-label fw-bold">Quantity:</label>
+        <label htmlFor="quantity" className="form-label fw-bold">
+          Quantity:
+        </label>
         <div className="input-group" style={{ width: '120px' }}>
           <button className="btn btn-outline-secondary" onClick={decrementQuantity}>
             -
@@ -177,7 +183,9 @@ export const ProductData = ({ data }) => {
 
       {/* Tags */}
       <div className="mb-4">
-        <label className="form-label fw-bold">Tags:</label>
+        <label htmlFor="tags" className="form-label fw-bold">
+          Tags:
+        </label>
         <div className="d-flex gap-2 flex-wrap">
           {data.details.tags.map((tag, index) => (
             <span key={index} className="badge bg-light text-dark">

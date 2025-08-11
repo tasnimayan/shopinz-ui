@@ -86,7 +86,7 @@ export const Footer = () => {
               </p>
               <p className="my-2">
                 <Link className="nav-link" to="/faq">
-                  FAQ's
+                  FAQ&apos;s
                 </Link>
               </p>
             </div>
@@ -113,10 +113,6 @@ export const Footer = () => {
               <p>
                 ShopinZ is one of the best online shopping store that features diverse products at affordable prices.{' '}
               </p>
-              <img
-                className="w-75"
-                src="https://www.uiu.ac.bd/wp-content/uploads/2021/02/Card-Logo-Pay-With-01-1.png"
-              />
             </div>
           </div>
         </div>

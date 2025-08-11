@@ -1,5 +1,3 @@
-import React from 'react';
-
 const OfferSlider = () => {
   const poster = [
     'https://img.freepik.com/free-psd/black-friday-special-offer-facebook-cover-banner-template_120329-1046.jpg?w=740&t=st=1708842909~exp=1708843509~hmac=37c7ff1e7b173e00a9b6ad968efd84d4bd378282cbf9aea5b3d4f33a0be2f8e8',

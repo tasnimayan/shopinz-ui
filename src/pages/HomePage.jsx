@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
 import Brands from '../components/product/Brands.jsx';
-import ProductStore from '../store/productStore.js';
-import FeatureStore from '../store/featureStore.js';
+import ProductStore from '../store/ProductStore.js';
+import FeatureStore from '../store/FeatureStore.js';
 import Slider from '../components/product/Slider.jsx';
 import Categories from '../components/product/Categories.jsx';
 import Products from '../components/product/Products.jsx';
@@ -25,7 +25,7 @@ const HomePage = () => {
       await ListByRemarkRequest('new');
       await BrandListRequest();
     })();
-  }, []);
+  }, [SliderListRequest, FeatureListRequest, CategoryListRequest, ListByRemarkRequest, BrandListRequest]);
 
   return (
     <Layout>

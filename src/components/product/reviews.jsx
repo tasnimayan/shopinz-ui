@@ -1,4 +1,4 @@
-import ProductStore from '../../store/productStore.js';
+import ProductStore from '../../store/ProductStore.js';
 import StarRatings from 'react-star-ratings';
 import { useEffect, useState, useRef } from 'react';
 import { toast } from 'react-hot-toast';
@@ -91,7 +91,7 @@ const Reviews = ({ productId }) => {
       formData.append('name', review.name);
       formData.append('rating', review.rating);
       formData.append('review', review.review);
-      review.images.forEach((image, index) => {
+      review.images.forEach((image) => {
         formData.append(`images`, image);
       });
 
@@ -129,7 +129,7 @@ const Reviews = ({ productId }) => {
     return () => {
       imagePreviews.forEach((preview) => URL.revokeObjectURL(preview));
     };
-  }, [productId]);
+  }, [productId, ReviewListRequest, imagePreviews]);
 
   // Render star rating input
   const renderStars = () => {
@@ -140,30 +140,37 @@ const Reviews = ({ productId }) => {
     for (let i = 1; i <= 5; i++) {
       if (i <= fullStars) {
         stars.push(
-          <i
+          <button
+            type="button"
             key={i}
-            className="bi bi-star-fill text-warning"
-            style={{ cursor: 'pointer', fontSize: '1.5rem' }}
             onClick={() => handleRatingChange(i)}
-          />
+            onKeyDown={(e) => e.key === 'Enter' && handleRatingChange(i)}
+          >
+            <i className="bi bi-star-fill text-warning" style={{ cursor: 'pointer', fontSize: '1.5rem' }} />
+          </button>
         );
       } else if (i === fullStars + 1 && hasHalfStar) {
         stars.push(
-          <i
+          <button
+            type="button"
             key={i}
-            className="bi bi-star-half text-warning"
-            style={{ cursor: 'pointer', fontSize: '1.5rem' }}
             onClick={() => handleRatingChange(i - 0.5)}
-          />
+            onKeyDown={(e) => e.key === 'Enter' && handleRatingChange(i - 0.5)}
+          >
+            <i className="bi bi-star-half text-warning" style={{ cursor: 'pointer', fontSize: '1.5rem' }} />
+          </button>
         );
       } else {
         stars.push(
-          <i
+          <button
             key={i}
             className="bi bi-star text-warning"
             style={{ cursor: 'pointer', fontSize: '1.5rem' }}
             onClick={() => handleRatingChange(i)}
-          />
+            onKeyDown={(e) => e.key === 'Enter' && handleRatingChange(i)}
+          >
+            <i className="bi bi-star text-warning" style={{ cursor: 'pointer', fontSize: '1.5rem' }} />
+          </button>
         );
       }
     }
@@ -253,7 +260,7 @@ const Reviews = ({ productId }) => {
             </div>
 
             <div className="mb-4">
-              <label className="form-label fw-medium d-block mb-2">
+              <label htmlFor="rating" className="form-label fw-medium d-block mb-2">
                 Your Rating <span className="text-danger">*</span>
               </label>
               <div className="d-flex align-items-center">
@@ -280,9 +287,11 @@ const Reviews = ({ productId }) => {
             </div>
 
             <div className="mb-4">
-              <label className="form-label fw-medium d-block">Add Photos (Optional)</label>
+              <label htmlFor="photos" className="form-label fw-medium d-block">
+                Add Photos (Optional)
+              </label>
               <p className="text-muted small mb-2">
-                Upload up to 4 photos to help others see what you're sharing. Max 5MB each.
+                Upload up to 4 photos to help others see what you&apos;re sharing. Max 5MB each.
               </p>
 
               <input
@@ -363,7 +372,7 @@ const Reviews = ({ productId }) => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .form-control,
         .form-select {
           border-radius: 0.5rem;

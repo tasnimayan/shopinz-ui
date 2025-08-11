@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import ProductStore from '../store/productStore.js';
+import { useEffect } from 'react';
+import ProductStore from '../store/ProductStore.js';
 import { useParams } from 'react-router-dom';
 import Layout from '../components/layout/RootLayout.jsx';
 import ProductList from '../components/product/ProductList.jsx';
@@ -12,7 +12,7 @@ const ProductByBrand = () => {
     (async () => {
       await ListByBrandRequest(id);
     })();
-  }, [id]);
+  }, [id, ListByBrandRequest]);
 
   return (
     <Layout>

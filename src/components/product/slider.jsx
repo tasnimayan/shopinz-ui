@@ -1,4 +1,4 @@
-import ProductStore from '../../store/productStore.js';
+import ProductStore from '../../store/ProductStore.js';
 import SliderSkeleton from '../../skeleton/SliderSkeleton.jsx';
 import { Link } from 'react-router-dom';
 

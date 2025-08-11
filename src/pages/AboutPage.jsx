@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
 import LegalContents from '../components/features/LegalContents.jsx';
-import FeatureStore from '../store/featureStore.js';
+import FeatureStore from '../store/FeatureStore.js';
 
 const AboutPage = () => {
   const { LegalDetailsRequest } = FeatureStore();
@@ -9,7 +9,7 @@ const AboutPage = () => {
     (async () => {
       await LegalDetailsRequest('about');
     })();
-  }, []);
+  }, [LegalDetailsRequest]);
   return (
     <Layout>
       <LegalContents />
