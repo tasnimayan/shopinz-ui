@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
-import Brands from '../components/product/Brands.jsx';
+import { Brands } from '../components/product/Brands.jsx';
 import ProductStore from '../store/ProductStore.js';
 import FeatureStore from '../store/FeatureStore.js';
 import Slider from '../components/product/Slider.jsx';

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SectionHeadline from './SectionHeadline.jsx';
 import BrandsSkeleton from '../../skeleton/BrandsSkeleton.jsx';
 
-const Brands = () => {
+export const Brands = () => {
   const { BrandList } = ProductStore();
 
   if (BrandList === null) {
@@ -36,5 +36,3 @@ const Brands = () => {
     );
   }
 };
-
-export default Brands;
