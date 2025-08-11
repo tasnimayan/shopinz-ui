@@ -3,7 +3,7 @@ import axios from 'axios';
 import { unauthorized } from '../utility/Utility.js';
 import Cookies from 'js-cookie';
 
-const sellerStore = create((set) => ({
+const SellerStore = create((set) => ({
   isFormSubmit: false,
 
   isLogin: () => {
@@ -175,4 +175,4 @@ const sellerStore = create((set) => ({
   // }
 }));
 
-export default sellerStore;
+export default SellerStore;

@@ -1,12 +1,12 @@
 import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import sellerStore from '../../store/SellerStore.js';
+import SellerStore from '../../store/SellerStore.js';
 import TopNav from './TopNav.jsx';
 
 const LoginForm = () => {
   let navigate = useNavigate();
-  let { SellerLoginData, LoginFormOnChange, SellerLoginRequest } = sellerStore();
+  let { SellerLoginData, LoginFormOnChange, SellerLoginRequest } = SellerStore();
 
   const onFormSubmit = async () => {
     if (!ValidationHelper.IsEmail(SellerLoginData.email)) {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import sellerStore from '../../store/SellerStore';
+import SellerStore from '../../store/SellerStore';
 import SellerLayout from './SellerLayout';
 import ProductRow from './ProductRow';
 import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
-  const { SellerProducts, SellerProductsRequest, SearchProductRequest } = sellerStore();
+  const { SellerProducts, SellerProductsRequest, SearchProductRequest } = SellerStore();
 
   const [sortCategory, setSortCategory] = useState(true); // true = ascending
   const [sortBrand, setSortBrand] = useState(true);

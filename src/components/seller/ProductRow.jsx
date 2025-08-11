@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import sellerStore from '../../store/SellerStore';
+import SellerStore from '../../store/SellerStore';
 const ProductRow = ({ product }) => {
   let [show, setShow] = useState(false);
 
-  const { ProductDeleteRequest } = sellerStore();
+  const { ProductDeleteRequest } = SellerStore();
   const onDelete = async (id) => {
     await ProductDeleteRequest(id);
   };

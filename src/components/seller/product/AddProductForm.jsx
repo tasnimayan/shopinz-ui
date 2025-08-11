@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import ProductStore from '../../../store/ProductStore';
-import sellerStore from '../../../store/SellerStore';
+import SellerStore from '../../../store/SellerStore';
 import { toast } from 'react-hot-toast';
 
 const AddProductForm = () => {
   const { CategoryList, CategoryListRequest, BrandList, BrandListRequest } = ProductStore();
-  const { productData, productDataOnChange, CreateProductRequest } = sellerStore();
+  const { productData, productDataOnChange, CreateProductRequest } = SellerStore();
 
   const [file, setFile] = useState(null);
 

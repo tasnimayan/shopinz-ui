@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import sellerStore from '../../store/SellerStore';
+import SellerStore from '../../store/SellerStore';
 
 const TopNav = () => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
-  const { isLogin, UserLogoutRequest } = sellerStore();
+  const { isLogin, UserLogoutRequest } = SellerStore();
 
   const onLogout = async () => {
     await UserLogoutRequest();
