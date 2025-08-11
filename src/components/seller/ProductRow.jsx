@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SellerStore from '../../store/SellerStore.js';
+import { SellerStore } from '../../store/VendorStore.js';
 const ProductRow = ({ product }) => {
   let [show, setShow] = useState(false);
 

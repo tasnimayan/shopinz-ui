@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import SellerStore from '../../store/SellerStore.js';
+import { SellerStore } from '../../store/VendorStore.js';
 import SellerLayout from './SellerLayout';
 import ProductRow from './ProductRow';
 import { useNavigate } from 'react-router-dom';

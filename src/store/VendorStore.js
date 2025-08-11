@@ -3,7 +3,7 @@ import axios from 'axios';
 import { unauthorized } from '../utility/Utility.js';
 import Cookies from 'js-cookie';
 
-const SellerStore = create((set) => ({
+export const SellerStore = create((set) => ({
   isFormSubmit: false,
 
   isLogin: () => {
@@ -121,58 +121,4 @@ const SellerStore = create((set) => ({
     set({ isFormSubmit: false });
     return res.data['status'] === 'success';
   },
-
-  // VerifyOTPRequest:async(otp)=>{
-  //     set({isFormSubmit:true})
-  //     let res=await axios.get(`/api/v1/users/verify/${otp}`);
-  //     set({isFormSubmit:false})
-  //     return res.data['status'] === "success";
-  // },
-
-  // ProfileForm:{cus_add:"",cus_city:"",cus_country:"",cus_fax:"",cus_name:"",cus_phone:"",cus_postcode:"",cus_state:"",ship_add:"",ship_city:"",ship_country:"",ship_name:"",ship_phone:"",ship_postcode:"",ship_state:""},
-  // ProfileFormChange:(name,value)=>{
-  //     set((state)=>({
-  //         ProfileForm:{
-  //             ...state.ProfileForm,
-  //             [name]:value
-  //         }
-  //     }))
-  // },
-
-  // ProfileDetails:null,
-  // ProfileDetailsRequest:async()=>{
-  //     try {
-  //         let res=await axios.get(`/api/v1/users/profile`);
-  //         if(res.data['data']){
-  //             set({ProfileDetails:res.data['data']})
-  //             set({ProfileForm:res.data['data']})
-  //         }else{
-  //             set({ProfileDetails:{}})
-  //         }
-  //     }catch (e) {
-  //         unauthorized(e.response.status)
-  //     }
-  // },
-
-  // ProfileSaveRequest:async(PostBody)=>{
-  //     try {
-  //         set({ProfileDetails:null})
-  //         let res=await axios.post(`/api/v1/users/profile`,PostBody);
-  //         return res.data['status'] === "success";
-  //     }catch (e) {
-  //         unauthorized(e.response.status)
-  //     }
-  // },
-
-  // ProfileDeleteRequest:async()=>{
-  //     try {
-  //         set({ProfileDetails:null})
-  //         let res=await axios.delete(`/api/v1/users/profile`);
-  //         return res.data['status'] === "success";
-  //     }catch (e) {
-  //         unauthorized(e.response.status)
-  //     }
-  // }
 }));
-
-export default SellerStore;

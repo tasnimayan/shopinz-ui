@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import SellerStore from '../../store/SellerStore.js';
+import { SellerStore } from '../../store/VendorStore.js';
 
 const TopNav = () => {
   const [visible, setVisible] = useState(false);

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import ProductStore from '../store/ProductStore.js';
 import Layout from '../components/layout/RootLayout.jsx';
-import SellerStore from '../store/SellerStore.js';
+import { SellerStore } from '../store/VendorStore.js';
 
 const CreateProduct = () => {
   const { CategoryList, CategoryListRequest } = ProductStore();
