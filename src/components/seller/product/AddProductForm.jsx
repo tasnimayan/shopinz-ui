@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import ProductStore from '../../../store/ProductStore';
-import SellerStore from '../../../store/SellerStore';
+import ProductStore from '../../../store/ProductStore.js';
 import { toast } from 'react-hot-toast';
+import SellerStore from '../../../store/SellerStore.js';
 
 const AddProductForm = () => {
   const { CategoryList, CategoryListRequest, BrandList, BrandListRequest } = ProductStore();
