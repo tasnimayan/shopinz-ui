@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import UserStore from '../../store/UserStore';
-import ValidationHelper from '../../utility/ValidationHelper';
+import UserStore from '../../store/UserStore.js';
+import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import UserSubmitButton from './UserSubmitButton';

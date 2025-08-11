@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import SellerStore from '../store/SellerStore';
+import SellerStore from '../store/SellerStore.js';
 
 // This is to control the authenticated routing. No unauthorized user can use defined routes under this component on MainComponent
 const PrivateRoute = () => {
