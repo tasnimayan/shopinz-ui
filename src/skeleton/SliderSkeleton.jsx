@@ -2,7 +2,7 @@ import Skeleton from 'react-loading-skeleton';
 import Lottie from 'lottie-react';
 import ImagePlaceholder from '../assets/images/image.json';
 
-const SliderSkeleton = () => {
+export const SliderSkeleton = () => {
   return (
     <div className="container-fluid hero-bg">
       <div className="row">
@@ -20,5 +20,3 @@ const SliderSkeleton = () => {
     </div>
   );
 };
-
-export default SliderSkeleton;

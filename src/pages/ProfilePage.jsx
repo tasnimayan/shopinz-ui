@@ -1,10 +1,9 @@
 import Layout from '../components/layout/RootLayout.jsx';
-import ProfileDetails from '../components/user/ProfileDetails.jsx';
-const ProfilePage = () => {
+import { ProfileDetails } from '../components/user/ProfileDetails.jsx';
+export default function ProfilePage() {
   return (
     <Layout>
       <ProfileDetails />
     </Layout>
   );
-};
-export default ProfilePage;
+}

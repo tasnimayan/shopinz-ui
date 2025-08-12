@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
 import { toast } from 'react-hot-toast';
 
-const ContactPage = () => {
+export default function ContactPage() {
   const [contact, setContact] = useState({ name: '', email: '', enquiry: '' });
 
   let handleChange = (name, value) => {
@@ -94,6 +94,4 @@ const ContactPage = () => {
       </div>
     </Layout>
   );
-};
-
-export default ContactPage;
+}

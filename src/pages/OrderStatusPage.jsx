@@ -1,7 +1,7 @@
 import Layout from '../components/layout/RootLayout';
 import { useSearchParams } from 'react-router-dom';
 
-const OrderStatusPage = () => {
+export default function OrderStatusPage() {
   const [searchParam] = useSearchParams();
   let payment = searchParam.get('payment');
   let pageObject = {
@@ -43,6 +43,4 @@ const OrderStatusPage = () => {
       </div>
     </Layout>
   );
-};
-
-export default OrderStatusPage;
+}

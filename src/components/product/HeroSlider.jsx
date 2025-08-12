@@ -1,10 +1,10 @@
 import ProductStore from '../../store/ProductStore.js';
-import SliderSkeleton from '../../skeleton/SliderSkeleton.jsx';
+import { SliderSkeleton } from '../../skeleton/SliderSkeleton.jsx';
 import { Link } from 'react-router-dom';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const Slider = () => {
+export const HeroSlider = () => {
   const { SliderList } = ProductStore();
 
   if (SliderList === null) {
@@ -86,5 +86,3 @@ const Slider = () => {
     );
   }
 };
-
-export default Slider;

@@ -1,12 +1,10 @@
 import Layout from '../components/layout/RootLayout.jsx';
-import InvoiceList from '../components/invoice/Invoice-list.jsx';
+import { InvoiceList } from '../components/invoice/InvoiceList.jsx';
 
-const InvoicePage = () => {
+export default function InvoicePage() {
   return (
     <Layout>
       <InvoiceList />
     </Layout>
   );
-};
-
-export default InvoicePage;
+}

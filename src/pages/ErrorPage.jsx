@@ -1,6 +1,6 @@
 import Layout from '../components/layout/RootLayout';
 
-const ErrorPage = () => {
+export default function ErrorPage() {
   return (
     <Layout>
       <div className="row py-5 text-center">
@@ -8,6 +8,4 @@ const ErrorPage = () => {
       </div>
     </Layout>
   );
-};
-
-export default ErrorPage;
+}

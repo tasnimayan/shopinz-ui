@@ -1,7 +1,8 @@
 import FeatureStore from '../../store/FeatureStore.js';
-import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
+import { LegalContentSkeleton } from '../../skeleton/LegalContentSkeleton.jsx';
 import parse from 'html-react-parser';
-const LegalContents = () => {
+
+export const LegalContents = () => {
   const { LegalDetails } = FeatureStore();
 
   if (LegalDetails === null) {
@@ -18,5 +19,3 @@ const LegalContents = () => {
     );
   }
 };
-
-export default LegalContents;

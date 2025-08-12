@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import cartStore from '../../store/CartStore.js';
-import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
+import { LegalContentSkeleton } from '../../skeleton/LegalContentSkeleton.jsx';
 
 import '../../assets/css/cartList.style.css';
-import FullPageLoader from '../../skeleton/FullPageLoader.jsx';
+import { FullPageLoader } from '../../skeleton/FullPageLoader.jsx';
 
-const CartList = () => {
+export const CartList = () => {
   const [quantity, SetQuantity] = useState(1);
 
   const {
@@ -178,5 +178,3 @@ const CartList = () => {
     </div>
   );
 };
-
-export default CartList;

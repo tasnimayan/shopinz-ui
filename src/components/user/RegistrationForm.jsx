@@ -3,9 +3,9 @@ import UserStore from '../../store/UserStore.js';
 import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import UserSubmitButton from './UserSubmitButton';
+import { UserSubmitButton } from './UserSubmitButton';
 
-const RegistrationForm = () => {
+export const RegistrationForm = () => {
   let { RegFormData, RegFormOnChange, UserRegRequest } = UserStore();
   let [gender, setGender] = useState('male');
   let navigate = useNavigate();
@@ -190,5 +190,3 @@ const RegistrationForm = () => {
     </section>
   );
 };
-
-export default RegistrationForm;

@@ -1,9 +1,9 @@
 import './profileDetails.style.css';
 import UserStore from '../../store/UserStore.js';
 import { useEffect } from 'react';
-import ProfileSkeleton from '../../skeleton/ProfileSkeleton.jsx';
+import { ProfileSkeleton } from '../../skeleton/ProfileSkeleton.jsx';
 
-const ProfileDetails = () => {
+export const ProfileDetails = () => {
   let { ProfileDetails, ProfileDetailsRequest, OrderDetails, OrderDetailsRequest } = UserStore();
 
   useEffect(() => {
@@ -135,5 +135,3 @@ const ProfileDetails = () => {
     </div>
   );
 };
-
-export default ProfileDetails;

@@ -6,7 +6,7 @@ import ProductStore from '../store/ProductStore.js';
 import Layout from '../components/layout/RootLayout.jsx';
 import { SellerStore } from '../store/VendorStore.js';
 
-const CreateProduct = () => {
+export default function CreateProduct() {
   const { CategoryList, CategoryListRequest } = ProductStore();
   const { CreateProductRequest } = SellerStore();
   const [product, setProduct] = useState({
@@ -233,6 +233,4 @@ const CreateProduct = () => {
       </section>
     </Layout>
   );
-};
-
-export default CreateProduct;
+}

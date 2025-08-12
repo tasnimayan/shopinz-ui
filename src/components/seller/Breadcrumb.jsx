@@ -1,4 +1,4 @@
-const Breadcrumb = () => {
+export const Breadcrumb = () => {
   return (
     <nav aria-label="breadcrumb" className="mb-2">
       <ol className="breadcrumb">
@@ -15,5 +15,3 @@ const Breadcrumb = () => {
     </nav>
   );
 };
-
-export default Breadcrumb;

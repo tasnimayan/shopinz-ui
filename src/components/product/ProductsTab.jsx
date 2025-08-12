@@ -1,7 +1,7 @@
 import ProductStore from '../../store/ProductStore.js';
-import ProductsSkeleton from '../../skeleton/ProductsSkeleton.jsx';
-import ProductCard from './ProductCard.jsx';
-import SectionHeadline from './SectionHeadline.jsx';
+import { ProductsSkeleton } from '../../skeleton/ProductsSkeleton.jsx';
+import { ProductCard } from './ProductCard.jsx';
+import { SectionHeadline } from './SectionHeadline.jsx';
 import { useState, useEffect } from 'react';
 
 const TAB_CONFIG = [
@@ -12,7 +12,7 @@ const TAB_CONFIG = [
   { label: 'Special', key: 'special' },
 ];
 
-const Products = () => {
+export const ProductsTab = () => {
   const { ListByRemark, ListByRemarkRequest } = ProductStore();
   const [activeTab, setActiveTab] = useState('new');
 
@@ -60,5 +60,3 @@ const Products = () => {
     </div>
   );
 };
-
-export default Products;

@@ -1,4 +1,4 @@
-const OfferSlider = () => {
+export const OffersSlider = () => {
   const poster = [
     'https://img.freepik.com/free-psd/black-friday-special-offer-facebook-cover-banner-template_120329-1046.jpg?w=740&t=st=1708842909~exp=1708843509~hmac=37c7ff1e7b173e00a9b6ad968efd84d4bd378282cbf9aea5b3d4f33a0be2f8e8',
     'https://img.freepik.com/free-psd/special-offer-black-friday-facebook-cover-banner-template_120329-1057.jpg?w=740&t=st=1708842955~exp=1708843555~hmac=00b0b7977b18e00a4b7387790107e7b57a07029eea204165fe5aed0a3c9b5747',
@@ -62,5 +62,3 @@ const OfferSlider = () => {
     </div>
   );
 };
-
-export default OfferSlider;

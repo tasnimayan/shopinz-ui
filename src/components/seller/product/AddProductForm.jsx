@@ -3,7 +3,7 @@ import ProductStore from '../../../store/ProductStore.js';
 import { toast } from 'react-hot-toast';
 import { SellerStore } from '../../../store/VendorStore.js';
 
-const AddProductForm = () => {
+export const AddProductForm = () => {
   const { CategoryList, CategoryListRequest, BrandList, BrandListRequest } = ProductStore();
   const { productData, productDataOnChange, CreateProductRequest } = SellerStore();
 
@@ -556,5 +556,3 @@ const AddProductForm = () => {
     </div>
   );
 };
-
-export default AddProductForm;

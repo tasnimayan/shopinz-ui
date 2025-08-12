@@ -1,7 +1,7 @@
 import ProductStore from '../../store/ProductStore.js';
 import { Link } from 'react-router-dom';
-import SectionHeadline from './SectionHeadline.jsx';
-import BrandsSkeleton from '../../skeleton/BrandsSkeleton.jsx';
+import { SectionHeadline } from './SectionHeadline.jsx';
+import { BrandsSkeleton } from '../../skeleton/BrandsSkeleton.jsx';
 
 export const BrandList = () => {
   const { BrandList } = ProductStore();

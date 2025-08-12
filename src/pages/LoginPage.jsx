@@ -1,12 +1,10 @@
 import Layout from '../components/layout/RootLayout.jsx';
-import LoginForm from '../components/user/LoginForm.jsx';
+import { LoginForm } from '../components/user/LoginForm.jsx';
 
-const LoginPage = () => {
+export default function LoginPage() {
   return (
     <Layout>
       <LoginForm />
     </Layout>
   );
-};
-
-export default LoginPage;
+}

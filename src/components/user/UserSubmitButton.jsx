@@ -1,6 +1,6 @@
 import UserStore from '../../store/UserStore.js';
 
-const UserSubmitButton = (props) => {
+export const UserSubmitButton = (props) => {
   let { isFormSubmit } = UserStore();
 
   if (isFormSubmit === false) {
@@ -17,4 +17,3 @@ const UserSubmitButton = (props) => {
     );
   }
 };
-export default UserSubmitButton;

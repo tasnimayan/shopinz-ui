@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import ProductStore from '../../store/ProductStore';
 import { useEffect, memo } from 'react';
-import SectionHeadline from './SectionHeadline';
+import { SectionHeadline } from './SectionHeadline';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -42,7 +42,7 @@ const TopRatedSlide = memo(({ item }) => (
 ));
 TopRatedSlide.displayName = 'TopRatedSlide';
 
-const TopTrendingCarousel = () => {
+export const TopRatedCarousel = () => {
   const { ListByRating, ListByRatingRequest } = ProductStore();
 
   useEffect(() => {
@@ -80,4 +80,3 @@ const TopTrendingCarousel = () => {
     </div>
   );
 };
-export default TopTrendingCarousel;

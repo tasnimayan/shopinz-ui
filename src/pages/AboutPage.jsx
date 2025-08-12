@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import Layout from '../components/layout/RootLayout.jsx';
-import LegalContents from '../components/features/LegalContents.jsx';
+import { LegalContents } from '../components/features/LegalContents.jsx';
 import FeatureStore from '../store/FeatureStore.js';
 
-const AboutPage = () => {
+export default function AboutPage() {
   const { LegalDetailsRequest } = FeatureStore();
   useEffect(() => {
     (async () => {
@@ -15,6 +15,4 @@ const AboutPage = () => {
       <LegalContents />
     </Layout>
   );
-};
-
-export default AboutPage;
+}

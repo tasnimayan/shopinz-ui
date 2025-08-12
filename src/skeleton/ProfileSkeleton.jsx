@@ -1,6 +1,6 @@
 import Skeleton from 'react-loading-skeleton';
 
-const ProfileSkeleton = () => {
+export const ProfileSkeleton = () => {
   return (
     <div className="container mt-5">
       <div className="card p-5 rounded-3">
@@ -69,5 +69,3 @@ const ProfileSkeleton = () => {
     </div>
   );
 };
-
-export default ProfileSkeleton;

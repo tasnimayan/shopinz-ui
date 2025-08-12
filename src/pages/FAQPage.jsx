@@ -1,6 +1,6 @@
 import Layout from '../components/layout/RootLayout';
 
-const FAQPage = () => {
+export default function FAQPage() {
   return (
     <Layout>
       <div className="row bg-orange py-2 container-fluid ">
@@ -84,6 +84,4 @@ const FAQPage = () => {
       </div>
     </Layout>
   );
-};
-
-export default FAQPage;
+}

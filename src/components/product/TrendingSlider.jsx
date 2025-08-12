@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import ProductStore from '../../store/ProductStore';
+import { SectionHeadline } from './SectionHeadline';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import SectionHeadline from './SectionHeadline';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const TrendingSlider = () => {
+export const TrendingSlider = () => {
   const { ListByRating } = ProductStore();
 
   return (
@@ -75,5 +75,3 @@ const TrendingSlider = () => {
     </div>
   );
 };
-
-export default TrendingSlider;

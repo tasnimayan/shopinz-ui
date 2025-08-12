@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './subscribe.style.css';
 import { toast } from 'react-hot-toast';
-const Subscribe = () => {
+export const Subscribe = () => {
   const [email, setEmail] = useState('');
 
   const handleSubscribe = async () => {
@@ -57,5 +57,3 @@ const Subscribe = () => {
     </section>
   );
 };
-
-export default Subscribe;

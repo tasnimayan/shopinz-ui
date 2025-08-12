@@ -1,10 +1,10 @@
-import UserSubmitButton from './UserSubmitButton.jsx';
+import { UserSubmitButton } from './UserSubmitButton.jsx';
 import UserStore from '../../store/UserStore.js';
 import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const OtpForm = () => {
+export const OtpForm = () => {
   let { OTPFormData, OTPFormOnChange, VerifyOTPRequest } = UserStore();
   let navigate = useNavigate();
 
@@ -40,5 +40,3 @@ const OtpForm = () => {
     </div>
   );
 };
-
-export default OtpForm;

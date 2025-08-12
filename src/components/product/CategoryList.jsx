@@ -1,14 +1,14 @@
 import ProductStore from '../../store/ProductStore.js';
-import CategoriesSkeleton from '../../skeleton/CategoriesSkeleton.jsx';
+import { CategoriesSkeleton } from '../../skeleton/CategoriesSkeleton.jsx';
 import { Link } from 'react-router-dom';
-import SectionHeadline from './SectionHeadline.jsx';
+import { SectionHeadline } from './SectionHeadline.jsx';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const Categories = () => {
-  const { CategoryList } = ProductStore();
+export const CategoryList = () => {
+  const { CategoryList: categoryData } = ProductStore();
 
-  if (CategoryList === null) {
+  if (categoryData === null) {
     return <CategoriesSkeleton />;
   } else {
     return (
@@ -16,7 +16,7 @@ const Categories = () => {
         <div className="container py-5">
           <div className="row">
             <SectionHeadline text="shop by categories" />
-            {CategoryList.map((item, i) => {
+            {categoryData.map((item, i) => {
               return (
                 <div key={i} className="col-3 text-center col-md-8r p-1">
                   <Link to={`/products?category=${item['_id']}`} className="card bg-gray category">
@@ -40,5 +40,3 @@ const Categories = () => {
     );
   }
 };
-
-export default Categories;

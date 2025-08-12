@@ -1,10 +1,9 @@
-import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const ProductCard = ({ product, className = '' }) => {
+export const ProductCard = ({ product, className = '' }) => {
   const { _id, image, title, price, discount, discountPrice, rating = 0, stock } = product || {};
 
   const displayPrice = discount ? (
@@ -51,5 +50,3 @@ const ProductCard = ({ product, className = '' }) => {
     </div>
   );
 };
-
-export default memo(ProductCard);

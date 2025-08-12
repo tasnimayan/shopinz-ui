@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import cartStore from '../../store/CartStore.js';
-import LegalContentSkeleton from '../../skeleton/LegalContentSkeleton.jsx';
+import { LegalContentSkeleton } from '../../skeleton/LegalContentSkeleton.jsx';
 
-const InvoiceList = () => {
+export const InvoiceList = () => {
   const { InvoiceListRequest, InvoiceList } = cartStore();
 
   useEffect(() => {
@@ -35,5 +35,3 @@ const InvoiceList = () => {
     );
   }
 };
-
-export default InvoiceList;

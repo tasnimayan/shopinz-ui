@@ -1,9 +1,9 @@
 import UserStore from '../../store/UserStore.js';
-import ProfileSkeleton from '../../skeleton/ProfileSkeleton.jsx';
+import { ProfileSkeleton } from '../../skeleton/ProfileSkeleton.jsx';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-const ProfileForm = () => {
+export const ProfileForm = () => {
   let { ProfileDetails, ProfileForm, ProfileFormChange, ProfileDetailsRequest, ProfileSaveRequest } = UserStore();
 
   useEffect(() => {
@@ -246,5 +246,3 @@ const ProfileForm = () => {
     );
   }
 };
-
-export default ProfileForm;

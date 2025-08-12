@@ -1,5 +1,6 @@
 import Skeleton from 'react-loading-skeleton';
-const LegalContentSkeleton = () => {
+
+export const LegalContentSkeleton = () => {
   return (
     <div className="container mt-3">
       <div className="row">
@@ -14,5 +15,3 @@ const LegalContentSkeleton = () => {
     </div>
   );
 };
-
-export default LegalContentSkeleton;

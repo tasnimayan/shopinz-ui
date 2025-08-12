@@ -54,7 +54,7 @@ PriceRangeInput.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const ProductsPage = ({ categoryId, remarkType }) => {
+export default function ProductsPage({ categoryId, remarkType }) {
   const { BrandListRequest, BrandList, CategoryList, CategoryListRequest, ListByFilterRequest } = ProductStore();
 
   const [searchParams] = useSearchParams();
@@ -162,6 +162,4 @@ const ProductsPage = ({ categoryId, remarkType }) => {
       </div>
     </Layout>
   );
-};
-
-export default ProductsPage;
+}

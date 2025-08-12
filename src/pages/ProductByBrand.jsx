@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Layout from '../components/layout/RootLayout.jsx';
 import ProductList from '../components/product/ProductList.jsx';
 
-const ProductByBrand = () => {
+export default function ProductByBrand() {
   const { ListByBrandRequest } = ProductStore();
   const { id } = useParams();
 
@@ -19,6 +19,4 @@ const ProductByBrand = () => {
       <ProductList />
     </Layout>
   );
-};
-
-export default ProductByBrand;
+}

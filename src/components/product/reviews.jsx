@@ -3,7 +3,7 @@ import StarRatings from 'react-star-ratings';
 import { useEffect, useState, useRef } from 'react';
 import { toast } from 'react-hot-toast';
 
-const Reviews = ({ productId }) => {
+export const Reviews = ({ productId }) => {
   const { ReviewList, ReviewListRequest } = ProductStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [imagePreviews, setImagePreviews] = useState([]);
@@ -422,5 +422,3 @@ const Reviews = ({ productId }) => {
     </div>
   );
 };
-
-export default Reviews;

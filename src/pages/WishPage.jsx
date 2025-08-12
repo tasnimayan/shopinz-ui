@@ -1,12 +1,10 @@
 import Layout from '../components/layout/RootLayout.jsx';
-import WishLists from '../components/wish/WishList.jsx';
+import { WishLists } from '../components/wish/WishList.jsx';
 
-const WishPage = () => {
+export default function WishPage() {
   return (
     <Layout>
       <WishLists />
     </Layout>
   );
-};
-
-export default WishPage;
+}

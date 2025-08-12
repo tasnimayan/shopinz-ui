@@ -2,7 +2,7 @@ import Skeleton from 'react-loading-skeleton';
 import Lottie from 'lottie-react';
 import ImagePlaceholder from '../assets/images/image.json';
 
-const CategoriesSkeleton = () => {
+export const CategoriesSkeleton = () => {
   return (
     <div className="section">
       <div className="container">
@@ -24,5 +24,3 @@ const CategoriesSkeleton = () => {
     </div>
   );
 };
-
-export default CategoriesSkeleton;

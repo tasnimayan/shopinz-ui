@@ -2,7 +2,7 @@ import Skeleton from 'react-loading-skeleton';
 import Lottie from 'lottie-react';
 import ImagePlaceholder from '../assets/images/image.json';
 
-const ProductsSkeleton = () => {
+export const ProductsSkeleton = () => {
   return (
     <div className="container">
       <div className="row">
@@ -22,5 +22,3 @@ const ProductsSkeleton = () => {
     </div>
   );
 };
-
-export default ProductsSkeleton;

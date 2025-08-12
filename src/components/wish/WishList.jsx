@@ -3,10 +3,10 @@ import WishStore from '../../store/WishStore.js';
 import CartStore from '../../store/CartStore.js';
 import '../../assets/css/cartList.style.css';
 import { toast } from 'react-hot-toast';
-import FullPageLoader from '../../skeleton/FullPageLoader.jsx';
+import { FullPageLoader } from '../../skeleton/FullPageLoader.jsx';
 import { Link } from 'react-router-dom';
 
-const WishLists = () => {
+export const WishLists = () => {
   const { WishListRequest, WishList, WishCount, RemoveFromWishRequest, isWishSubmit } = WishStore();
   const { CartForm, CartSaveRequest, isCartSubmit } = CartStore();
 
@@ -150,5 +150,3 @@ const WishLists = () => {
     </div>
   );
 };
-
-export default WishLists;

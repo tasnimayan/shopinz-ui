@@ -1,9 +1,9 @@
-import ProductImages from './ProductImages.jsx';
+import { ProductImages } from './ProductImages.jsx';
 import ProductStore from '../../store/ProductStore.js';
-import DetailsSkeleton from '../../skeleton/DetailsSkeleton.jsx';
+import { DetailsSkeleton } from '../../skeleton/DetailsSkeleton.jsx';
 import parse from 'html-react-parser';
 import { useEffect } from 'react';
-import Reviews from './Reviews.jsx';
+import { Reviews } from './Reviews.jsx';
 import { useParams } from 'react-router-dom';
 import '../../assets/css/product-details.style.css';
 import { ProductData } from './ProductData.jsx';

@@ -1,9 +1,10 @@
-import UserSubmitButton from './UserSubmitButton.jsx';
+import { UserSubmitButton } from './UserSubmitButton.jsx';
 import UserStore from '../../store/UserStore.js';
 import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-const LoginForm = () => {
+
+export const LoginForm = () => {
   let navigate = useNavigate();
   let { LoginFormData, LoginFormOnChange, UserLoginRequest } = UserStore();
 
@@ -57,5 +58,3 @@ const LoginForm = () => {
     </div>
   );
 };
-
-export default LoginForm;

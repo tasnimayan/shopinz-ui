@@ -2,7 +2,7 @@ import Skeleton from 'react-loading-skeleton';
 import Lottie from 'lottie-react';
 import ImagePlaceholder from '../assets/images/image.json';
 
-const BrandsSkeleton = () => {
+export const BrandsSkeleton = () => {
   return (
     <div className="section">
       <div className="container">
@@ -29,5 +29,3 @@ const BrandsSkeleton = () => {
     </div>
   );
 };
-
-export default BrandsSkeleton;

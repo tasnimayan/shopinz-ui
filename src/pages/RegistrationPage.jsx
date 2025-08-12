@@ -1,12 +1,10 @@
 import Layout from '../components/layout/RootLayout';
-import RegistrationForm from '../components/user/RegistrationForm';
+import { RegistrationForm } from '../components/user/RegistrationForm';
 
-const RegistrationPage = () => {
+export default function RegistrationPage() {
   return (
     <Layout>
       <RegistrationForm />
     </Layout>
   );
-};
-
-export default RegistrationPage;
+}

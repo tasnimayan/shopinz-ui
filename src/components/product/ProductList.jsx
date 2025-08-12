@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductStore from '../../store/ProductStore.js';
-import ProductsSkeleton from '../../skeleton/ProductsSkeleton.jsx';
-import ProductCard from './ProductCard.jsx';
+import { ProductsSkeleton } from '../../skeleton/ProductsSkeleton.jsx';
+import { ProductCard } from './ProductCard.jsx';
 
 const ProductList = () => {
   const { productList, isProductLoading, productError } = ProductStore();
