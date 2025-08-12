@@ -2,9 +2,9 @@ import { useEffect, useState, useCallback } from 'react';
 import ProductStore from '../store/ProductStore.js';
 import { useSearchParams } from 'react-router-dom';
 import Layout from '../components/layout/RootLayout.jsx';
-import PropTypes from 'prop-types';
 import ProductList from '../components/product/ProductList.jsx';
 import toast from 'react-hot-toast';
+import PropTypes from 'prop-types';
 
 // Constants
 const PRICE_RANGE = {

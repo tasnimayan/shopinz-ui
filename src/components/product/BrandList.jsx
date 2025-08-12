@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SectionHeadline from './SectionHeadline.jsx';
 import BrandsSkeleton from '../../skeleton/BrandsSkeleton.jsx';
 
-export const Brands = () => {
+export const BrandList = () => {
   const { BrandList } = ProductStore();
 
   if (BrandList === null) {

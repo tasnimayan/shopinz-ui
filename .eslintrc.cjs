@@ -33,7 +33,7 @@ module.exports = {
   ],
   rules: {
     // Import rules (important for Vercel case sensitivity issues)
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': ['error', { caseSensitive: true }],
     'import/named': 'error',
     'import/default': 'error',
     'import/namespace': 'error',
@@ -53,5 +53,15 @@ module.exports = {
     'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     // 'no-console': 'warn',
     'no-debugger': 'error',
+
+    'import/no-named-as-default': 'off',
+    'import/no-duplicates': 'error',
+    'import/no-named-as-default-member': 'off',
+    'import/no-cycle': 'error',
+    'import/no-extraneous-dependencies': 'error',
+    'import/no-mutable-exports': 'error',
+    'import/export': 'error',
+    'import/no-useless-path-segments': 'error',
+    'import/extensions': 'off',
   },
 };
