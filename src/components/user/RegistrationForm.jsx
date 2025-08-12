@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import UserStore from '../../store/UserStore.js';
-import ValidationHelper from '../../utility/ValidationHelper.js';
+import Validator from '../../utility/Validator.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { UserSubmitButton } from './UserSubmitButton';
@@ -17,7 +17,7 @@ export const RegistrationForm = () => {
     RegFormOnChange('gender', selected);
   };
   const onFormSubmit = async () => {
-    if (!ValidationHelper.IsEmail(RegFormData.email)) {
+    if (!Validator.IsEmail(RegFormData.email)) {
       toast.error('Invalid Email Address!');
     } else {
       let res = await UserRegRequest(RegFormData);

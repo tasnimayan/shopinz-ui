@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { routes, privateSellerRoutes } from './routes';
-import PrivateRoute from './utility/Authentication.jsx';
 import { Loading } from './components/Loading.jsx';
+import PrivateRoute from './utility/PrivateRoute.jsx';
 
-const App = () => {
+export default function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
@@ -23,5 +23,4 @@ const App = () => {
       </Suspense>
     </BrowserRouter>
   );
-};
-export default App;
+}

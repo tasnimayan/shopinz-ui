@@ -1,4 +1,4 @@
-class ValidationHelper {
+class Validator {
   static IsEmail(value) {
     let EmailRegx = /\S+@\S+\.\S+/;
     return EmailRegx.test(value);
@@ -18,4 +18,4 @@ class ValidationHelper {
     return value.length === 0;
   }
 }
-export default ValidationHelper;
+export default Validator;

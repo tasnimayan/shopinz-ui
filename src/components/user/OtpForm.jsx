@@ -1,6 +1,6 @@
 import { UserSubmitButton } from './UserSubmitButton.jsx';
 import UserStore from '../../store/UserStore.js';
-import ValidationHelper from '../../utility/ValidationHelper.js';
+import Validator from '../../utility/Validator.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export const OtpForm = () => {
   let navigate = useNavigate();
 
   const onFormSubmit = async () => {
-    if (ValidationHelper.IsEmpty(OTPFormData.otp)) {
+    if (Validator.IsEmpty(OTPFormData.otp)) {
       toast.error('Valid PIN Required');
     } else {
       let res = await VerifyOTPRequest(OTPFormData.otp);

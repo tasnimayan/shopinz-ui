@@ -1,6 +1,6 @@
 import { UserSubmitButton } from './UserSubmitButton.jsx';
 import UserStore from '../../store/UserStore.js';
-import ValidationHelper from '../../utility/ValidationHelper.js';
+import Validator from '../../utility/Validator.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export const LoginForm = () => {
   let { LoginFormData, LoginFormOnChange, UserLoginRequest } = UserStore();
 
   const onFormSubmit = async () => {
-    if (!ValidationHelper.IsEmail(LoginFormData.email)) {
+    if (!Validator.IsEmail(LoginFormData.email)) {
       toast.error('Invalid Email Address!');
     } else {
       let res = await UserLoginRequest(LoginFormData);

@@ -1,4 +1,4 @@
-import ValidationHelper from '../../utility/ValidationHelper.js';
+import Validator from '../../utility/Validator.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { SellerStore } from '../../store/VendorStore.js';
@@ -9,7 +9,7 @@ const LoginForm = () => {
   let { SellerLoginData, LoginFormOnChange, SellerLoginRequest } = SellerStore();
 
   const onFormSubmit = async () => {
-    if (!ValidationHelper.IsEmail(SellerLoginData.email)) {
+    if (!Validator.IsEmail(SellerLoginData.email)) {
       toast.error('Invalid Email Address!');
     } else {
       let res = await SellerLoginRequest(SellerLoginData);

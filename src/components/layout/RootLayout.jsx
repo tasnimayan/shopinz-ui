@@ -1,5 +1,5 @@
-import { NavBar } from './NavBar';
-import { Footer } from './Footer';
+import { NavBar } from './NavBar.jsx';
+import { FooterSection } from './FooterSection.jsx';
 import { Toaster } from 'react-hot-toast';
 
 export default function RootLayout({ children }) {
@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
     <>
       <NavBar />
       {children}
-      <Footer />
+      <FooterSection />
       <Toaster position="top-right" />
     </>
   );

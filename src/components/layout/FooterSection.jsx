@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export const Footer = () => {
+export const FooterSection = () => {
   return (
     <div>
       <div className="bg-white shadow-sm bg-white font-raleway border-top">
