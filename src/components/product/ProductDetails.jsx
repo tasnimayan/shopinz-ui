@@ -3,7 +3,7 @@ import ProductStore from '../../store/ProductStore.js';
 import { DetailsSkeleton } from '../../skeleton/DetailsSkeleton.jsx';
 import parse from 'html-react-parser';
 import { useEffect } from 'react';
-import { Reviews } from './Reviews.jsx';
+import { ProductReviews } from './ProductReviews.jsx';
 import { useParams } from 'react-router-dom';
 import '../../assets/css/product-details.style.css';
 import { ProductData } from './ProductData.jsx';
@@ -117,7 +117,7 @@ export const ProductDetails = () => {
                   tabIndex="0"
                 >
                   <div className="p-3">
-                    <Reviews productId={id} />
+                    <ProductReviews productId={id} />
                   </div>
                 </div>
               </div>

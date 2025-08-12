@@ -2,7 +2,7 @@ import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { SellerStore } from '../../store/VendorStore.js';
-import TopNav from './TopNav.jsx';
+import { TopNav } from './TopNav.jsx';
 
 const LoginForm = () => {
   let navigate = useNavigate();

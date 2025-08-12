@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SellerStore } from '../../store/VendorStore.js';
-const ProductRow = ({ product }) => {
+
+export const ProductRow = ({ product }) => {
   let [show, setShow] = useState(false);
 
   const { ProductDeleteRequest } = SellerStore();
@@ -81,5 +82,3 @@ const ProductRow = ({ product }) => {
     </tr>
   );
 };
-
-export default ProductRow;

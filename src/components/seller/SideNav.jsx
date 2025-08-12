@@ -1,4 +1,4 @@
-const SideNav = () => {
+export const SideNav = () => {
   return (
     <aside className="aside border-end bg-white position-fixed start-0 w-20">
       <div className="p-2 ps-4">
@@ -63,5 +63,3 @@ const SideNav = () => {
     </aside>
   );
 };
-
-export default SideNav;

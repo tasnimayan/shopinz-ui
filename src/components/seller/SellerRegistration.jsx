@@ -2,9 +2,9 @@ import { SellerStore } from '../../store/VendorStore.js';
 import ValidationHelper from '../../utility/ValidationHelper.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import TopNav from './TopNav';
+import { TopNav } from './TopNav.jsx';
 
-const SellerRegistration = () => {
+export default function SellerRegistration() {
   const { RegFormData, RegFormOnChange, SellerRegRequest } = SellerStore();
   let navigate = useNavigate();
 
@@ -120,6 +120,4 @@ const SellerRegistration = () => {
       </section>
     </>
   );
-};
-
-export default SellerRegistration;
+}

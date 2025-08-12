@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { SellerStore } from '../../store/VendorStore.js';
 
-const TopNav = () => {
+export const TopNav = () => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
   const { isLogin, UserLogoutRequest } = SellerStore();
@@ -118,5 +118,3 @@ const TopNav = () => {
     </>
   );
 };
-
-export default TopNav;
