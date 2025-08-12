@@ -1,16 +1,14 @@
-import { AppNavBar } from './AppNavBar';
+import { NavBar } from './NavBar';
 import { Footer } from './Footer';
 import { Toaster } from 'react-hot-toast';
 
-const RootLayout = (props) => {
+export default function RootLayout({ children }) {
   return (
     <>
-      <AppNavBar />
-      {props.children}
-      <Toaster position="top-right" />
+      <NavBar />
+      {children}
       <Footer />
+      <Toaster position="top-right" />
     </>
   );
-};
-
-export default RootLayout;
+}

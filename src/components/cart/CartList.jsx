@@ -5,6 +5,8 @@ import { LegalContentSkeleton } from '../../skeleton/LegalContentSkeleton.jsx';
 import '../../assets/css/cartList.style.css';
 import { FullPageLoader } from '../../skeleton/FullPageLoader.jsx';
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export const CartList = () => {
   const [quantity, SetQuantity] = useState(1);
 
@@ -78,7 +80,13 @@ export const CartList = () => {
               <div className="row border-bottom" key={idx}>
                 <div className="row main align-items-center">
                   <div className="col-2">
-                    <img className="img-fluid cart-img" src={item.product.image} alt={item.product.title} />
+                    <img
+                      className="img-fluid cart-img"
+                      src={
+                        item.product.image ? BASE_URL + item.product.image : '/src/assets/images/ImagePlaceholder.svg'
+                      }
+                      alt={item.product.title}
+                    />
                   </div>
                   <div className="col-5">
                     {/* <div className="row text-muted">Shirt</div> */}

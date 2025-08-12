@@ -4,7 +4,7 @@ import UserStore from '../../store/UserStore.js';
 import CartStore from '../../store/CartStore.js';
 import './layout.style.css';
 
-export const AppNavBar = () => {
+export const NavBar = () => {
   const [visible, setVisible] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
