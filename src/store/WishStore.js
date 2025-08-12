@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
-import { unauthorized } from '../utility/Utility.js';
+import { unauthorized } from '../utility';
 
 const WishStore = create((set) => ({
   isWishSubmit: false,

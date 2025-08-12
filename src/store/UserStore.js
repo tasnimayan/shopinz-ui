@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
-import { unauthorized } from '../utility/Utility.js';
+import { unauthorized } from '../utility';
 import Cookies from 'js-cookie';
 const UserStore = create((set) => ({
   isLogin: () => {
