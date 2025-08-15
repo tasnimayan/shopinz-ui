@@ -22,20 +22,18 @@ export const ProfileDetails = () => {
       <div className="row mt-4">
         <div className="profile-nav col-md-3">
           <div className="panel">
-            <div className="user-heading round ">
-              <img src="/src/assets/images/avatar.png" alt="" />
-              <h1>{ProfileDetails.details.cus_name}</h1>
-              <p>{ProfileDetails.email ?? ''}</p>
+            <div className="user-heading round">
+              <img src="/src/assets/images/avatar.png" alt="" className="w-100 h-100" />
             </div>
-            <ul className="nav flex-column nav-pills">
-              <li className="">
-                <button type="button">
-                  <i className="bi bi-person"></i> Profile
+            <ul className="nav flex gap-2 my-3 ">
+              <li>
+                <button type="button" className="px-2">
+                  <i className="bi bi-person me-2"></i> Profile
                 </button>
               </li>
               <li>
-                <button type="button">
-                  <i className="bi bi-pencil-square"></i>Edit profile
+                <button type="button" className="px-2">
+                  <i className="bi bi-pencil-square me-2"></i>Edit profile
                 </button>
               </li>
             </ul>

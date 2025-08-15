@@ -4,7 +4,10 @@ export function unauthorized(code) {
   if (code === 401) {
     sessionStorage.clear();
     localStorage.clear();
-    window.location.href = '/login';
+
+    if (window.location.pathname !== '/login') {
+      window.location.href = '/login';
+    }
   }
 }
 

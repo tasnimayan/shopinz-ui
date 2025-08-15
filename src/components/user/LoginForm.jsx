@@ -31,6 +31,7 @@ export const LoginForm = () => {
               placeholder="email"
               type="email"
               className="form-control mb-3"
+              autoComplete
             />
 
             <input

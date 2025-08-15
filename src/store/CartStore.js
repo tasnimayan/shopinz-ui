@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import axios from 'axios';
 import { unauthorized } from '../utility';
+import { apiRequest } from '../utility/axiosRequest';
 
 const CartStore = create((set) => ({
   isCartSubmit: false,
@@ -18,7 +18,7 @@ const CartStore = create((set) => ({
   CartSaveRequest: async (PostBody) => {
     try {
       set({ isCartSubmit: true });
-      let res = await axios.post(`/api/v1/users/cart-list`, PostBody);
+      let res = await apiRequest.post(`/api/v1/users/cart-list`, PostBody);
       return res.data['status'] === 'success';
     } catch (e) {
       unauthorized(e.response.status);
@@ -33,13 +33,13 @@ const CartStore = create((set) => ({
 
   CartListRequest: async () => {
     try {
-      let res = await axios.get(`/api/v1/users/cart-list`);
+      let res = await apiRequest.get(`/api/v1/users/cart-list`);
       set({ CartList: res.data['data'] });
       set({ CartCount: res.data['data'].length });
       set({ CartSummary: res.data['summary'] });
     } catch (e) {
       console.log(e);
-      unauthorized(e.response.status);
+      // unauthorized(e.response.status);
     } finally {
       set({ isCartSubmit: false });
     }
@@ -49,7 +49,7 @@ const CartStore = create((set) => ({
     try {
       let postBody = { productID: id };
       set({ isCartSubmit: true });
-      let res = await axios.delete(`/api/v1/users/cart-list`, { data: postBody });
+      let res = await apiRequest.delete(`/api/v1/users/cart-list`, { data: postBody });
       return res.data['status'] === 'success';
     } catch (e) {
       console.log(e);
@@ -62,7 +62,7 @@ const CartStore = create((set) => ({
   CreateInvoiceRequest: async () => {
     try {
       set({ isCartSubmit: true });
-      let res = await axios.get(`/api/v1/invoice/create-invoice`);
+      let res = await apiRequest.get(`/api/v1/invoice/create-invoice`);
       window.location.href = res.data['data']['GatewayPageURL'];
     } catch (e) {
       unauthorized(e.response.status);
@@ -74,7 +74,7 @@ const CartStore = create((set) => ({
   InvoiceList: null,
   InvoiceListRequest: async () => {
     try {
-      let res = await axios.get(`/api/v1/invoice/invoice-list`);
+      let res = await apiRequest.get(`/api/v1/invoice/invoice-list`);
       set({ InvoiceList: res.data['data'] });
     } catch (e) {
       unauthorized(e.response.status);

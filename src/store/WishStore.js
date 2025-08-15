@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import axios from 'axios';
 import { unauthorized } from '../utility';
+import { apiRequest } from '../utility/axiosRequest';
 
 const WishStore = create((set) => ({
   isWishSubmit: false,
@@ -8,7 +8,7 @@ const WishStore = create((set) => ({
   WishSaveRequest: async (PostBody) => {
     try {
       set({ isWishSubmit: true });
-      let res = await axios.post(`/api/v1/users/wish-list`, PostBody);
+      let res = await apiRequest.post('/api/v1/users/wish-list', PostBody);
       return res.data['status'] === 'success';
     } catch (e) {
       unauthorized(e.response.status);
@@ -21,7 +21,7 @@ const WishStore = create((set) => ({
   WishCount: 0,
   WishListRequest: async () => {
     try {
-      let res = await axios.get(`/api/v1/users/wish-list`);
+      let res = await apiRequest.get('/api/v1/users/wish-list');
       if (res.data) {
         set({ WishList: res.data['data'].products ?? null });
         set({ WishCount: res.data['data'].products.length ?? 0 });
@@ -43,7 +43,7 @@ const WishStore = create((set) => ({
     try {
       let postBody = { productId: id };
       set({ isWishSubmit: true });
-      let res = await axios.delete(`/api/v1/users/wish-list`, { data: postBody });
+      let res = await apiRequest.delete('/api/v1/users/wish-list', { data: postBody });
       return res.data['status'] === 'success';
     } catch (e) {
       console.log(e);

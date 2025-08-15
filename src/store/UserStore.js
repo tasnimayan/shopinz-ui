@@ -1,7 +1,8 @@
 import { create } from 'zustand';
-import axios from 'axios';
 import { unauthorized } from '../utility';
 import Cookies from 'js-cookie';
+import { apiRequest } from '../utility/axiosRequest';
+
 const UserStore = create((set) => ({
   isLogin: () => {
     return !!Cookies.get('shopinz');
@@ -20,8 +21,11 @@ const UserStore = create((set) => ({
   UserLoginRequest: async (formData) => {
     try {
       set({ isFormSubmit: true });
-      let res = await axios.post(`/api/v1/users/login`, formData);
+      let res = await apiRequest.post('/api/v1/users/login', formData);
       set({ isFormSubmit: false });
+      // if (res.data['status'] === 'success') {
+      //   Cookies.set('shopinz', res.data['data']['token'], { expires: 7 });
+      // }
       return res.data['status'] === 'success';
     } catch (e) {
       set({ isFormSubmit: false });
@@ -42,7 +46,7 @@ const UserStore = create((set) => ({
   UserRegRequest: async (formData) => {
     set({ isFormSubmit: true });
     try {
-      let res = await axios.post(`/api/v1/users/signup`, formData);
+      let res = await apiRequest.post(`/api/v1/users/signup`, formData);
       set({ isFormSubmit: false });
       return res.data['status'] === 'success';
     } catch (error) {
@@ -59,7 +63,7 @@ const UserStore = create((set) => ({
   VerifyOTPRequest: async (otp) => {
     set({ isFormSubmit: true });
     try {
-      let res = await axios.get(`/api/v1/users/verify/${otp}`, { timeout: 5000 });
+      let res = await apiRequest.get(`/api/v1/users/verify/${otp}`, { timeout: 5000 });
       set({ isFormSubmit: false });
       return res.data['status'] === 'success';
     } catch (error) {
@@ -75,8 +79,10 @@ const UserStore = create((set) => ({
 
   UserLogoutRequest: async () => {
     set({ isFormSubmit: true });
-    let res = await axios.get(`/api/v1/users/logout`);
+    let res = await apiRequest.get('/api/v1/users/logout');
     set({ isFormSubmit: false });
+    sessionStorage.clear();
+    localStorage.clear();
     return res.data['status'] === 'success';
   },
 
@@ -120,7 +126,7 @@ const UserStore = create((set) => ({
   ProfileDetails: null,
   ProfileDetailsRequest: async () => {
     try {
-      let res = await axios.get(`/api/v1/users/profile`);
+      let res = await apiRequest.get('/api/v1/users/profile');
       if (res.data['data']) {
         set({ ProfileDetails: res.data['data'] });
         set({ ProfileForm: res.data['data'] });
@@ -135,7 +141,7 @@ const UserStore = create((set) => ({
   OrderDetails: null,
   OrderDetailsRequest: async () => {
     try {
-      let res = await axios.get(`/api/v1/users/orders`);
+      let res = await apiRequest.get('/api/v1/users/orders');
       if (res.data['data']) {
         set({ OrderDetails: res.data['data'] });
       } else {
@@ -149,7 +155,7 @@ const UserStore = create((set) => ({
   ProfileSaveRequest: async (PostBody) => {
     try {
       set({ ProfileDetails: null });
-      let res = await axios.post(`/api/v1/users/profile`, PostBody);
+      let res = await apiRequest.post('/api/v1/users/profile', PostBody);
       return res.data['status'] === 'success';
     } catch (e) {
       unauthorized(e.response.status);
@@ -159,7 +165,7 @@ const UserStore = create((set) => ({
   ProfileDeleteRequest: async () => {
     try {
       set({ ProfileDetails: null });
-      let res = await axios.delete(`/api/v1/users/profile`);
+      let res = await apiRequest.delete('/api/v1/users/profile');
       return res.data['status'] === 'success';
     } catch (e) {
       unauthorized(e.response.status);

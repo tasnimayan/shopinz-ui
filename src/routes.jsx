@@ -4,8 +4,6 @@ const SellerRegistration = lazy(() => import('./components/seller/SellerRegistra
 const AddProduct = lazy(() => import('./components/seller/AddProduct.jsx'));
 const Products = lazy(() => import('./components/seller/Products.jsx'));
 const LoginForm = lazy(() => import('./components/seller/Login.jsx'));
-const { RemarkProducts } = lazy(() => import('./components/product/RemarkProducts.jsx'));
-
 const HomePage = lazy(() => import('./pages/HomePage.jsx'));
 const ProductDetails = lazy(() => import('./pages/ProductDetailsPage.jsx'));
 const ProductByBrand = lazy(() => import('./pages/ProductByBrand.jsx'));
@@ -24,6 +22,7 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage.jsx'));
 const ProductsPage = lazy(() => import('./pages/ProductsPage.jsx'));
 const OrderStatusPage = lazy(() => import('./pages/OrderStatusPage.jsx'));
 const WishPage = lazy(() => import('./pages/WishPage.jsx'));
+const RemarkProducts = lazy(() => import('./components/product/RemarkProducts.jsx'));
 
 export const routes = [
   { path: '/', element: <HomePage /> },
@@ -31,7 +30,7 @@ export const routes = [
   { path: '/register', element: <RegistrationPage /> },
   { path: '/verify', element: <OtpPage /> },
   { path: '/login', element: <LoginPage /> },
-  // User
+  // // User
   { path: '/profile', element: <ProfilePage /> },
   { path: '/cart', element: <CartPage /> },
   { path: '/invoices', element: <InvoicePage /> },

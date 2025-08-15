@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import axios from 'axios';
 import { unauthorized } from '../utility';
 import Cookies from 'js-cookie';
+import { apiRequest } from '../utility/axiosRequest';
 
 export const SellerStore = create((set) => ({
   isFormSubmit: false,
@@ -22,14 +22,14 @@ export const SellerStore = create((set) => ({
 
   SellerLoginRequest: async (formData) => {
     set({ isFormSubmit: true });
-    let res = await axios.post(`/api/v1/seller/login`, formData);
+    let res = await apiRequest.post('/api/v1/seller/login', formData);
     set({ isFormSubmit: false });
     return res.data['status'] === 'success';
   },
 
   SellerLogoutRequest: async () => {
     set({ isFormSubmit: true });
-    let res = await axios.get(`/api/v1/seller/logout`);
+    let res = await apiRequest.get('/api/v1/seller/logout');
     set({ isFormSubmit: false });
     return res.data['status'] === 'success';
   },
@@ -61,7 +61,7 @@ export const SellerStore = create((set) => ({
   CreateProductRequest: async (PostBody) => {
     try {
       set({ productData: null });
-      let res = await axios.post(`/api/v1/seller/products`, PostBody);
+      let res = await apiRequest.post('/api/v1/seller/products', PostBody);
       return res.data['status'] === 'success';
     } catch (e) {
       unauthorized(e.response.status);
@@ -71,7 +71,7 @@ export const SellerStore = create((set) => ({
   ProductDeleteRequest: async (id) => {
     try {
       set({ productData: null });
-      let res = await axios.delete(`/api/v1/seller/products/${id}`);
+      let res = await apiRequest.delete(`/api/v1/seller/products/${id}`);
       return res.data['status'] === 'success';
     } catch (e) {
       unauthorized(e.response.status);
@@ -81,7 +81,7 @@ export const SellerStore = create((set) => ({
   SellerProducts: [],
   SellerProductsRequest: async () => {
     try {
-      let res = await axios.get(`/api/v1/seller/products`);
+      let res = await apiRequest.get('/api/v1/seller/products');
       if (res.data['data']) {
         set({ SellerProducts: res.data['data'] });
       } else {
@@ -94,7 +94,7 @@ export const SellerStore = create((set) => ({
 
   SearchProductRequest: async (query) => {
     try {
-      let res = await axios.get(`/api/v1/seller/search/${query}`);
+      let res = await apiRequest.get(`/api/v1/seller/search/${query}`);
       if (res.data['data']) {
         set({ SellerProducts: res.data['data'] });
       } else {
@@ -117,7 +117,7 @@ export const SellerStore = create((set) => ({
 
   SellerRegRequest: async (formData) => {
     set({ isFormSubmit: true });
-    let res = await axios.post(`/api/v1/seller/signup`, formData);
+    let res = await apiRequest.post('/api/v1/seller/signup', formData);
     set({ isFormSubmit: false });
     return res.data['status'] === 'success';
   },

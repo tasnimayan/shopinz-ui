@@ -14,15 +14,14 @@ export const NavBar = () => {
 
   const onLogout = async () => {
     await UserLogoutRequest();
-    sessionStorage.clear();
-    localStorage.clear();
     navigate('/');
   };
 
   const dropdownRef = useRef(null);
+  const isLoggedIn = isLogin();
 
   useEffect(() => {
-    if (isLogin()) {
+    if (isLoggedIn) {
       CartListRequest();
     }
 
@@ -34,7 +33,7 @@ export const NavBar = () => {
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isLogin, CartListRequest]);
+  }, [isLoggedIn]);
 
   return (
     <>

@@ -7,8 +7,8 @@ export default function RootLayout({ children }) {
     <>
       <NavBar />
       {children}
-      <FooterSection />
       <Toaster position="top-right" />
+      <FooterSection />
     </>
   );
 }

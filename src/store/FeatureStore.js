@@ -1,10 +1,10 @@
 import { create } from 'zustand';
-import axios from 'axios';
+import { apiRequest } from '../utility/axiosRequest';
 
 const FeatureStore = create((set) => ({
   FeatureList: null,
   FeatureListRequest: async () => {
-    let res = await axios.get(`/api/v1/products/featured`);
+    let res = await apiRequest.get(`/api/v1/products/featured`);
     if (res.data['status'] === 'success') {
       set({ FeatureList: res.data['data'] });
     }
@@ -13,7 +13,7 @@ const FeatureStore = create((set) => ({
   LegalDetails: null,
   LegalDetailsRequest: async (type) => {
     set({ LegalDetails: null });
-    let res = await axios.get(`/api/v1/legal-details/${type}`);
+    let res = await apiRequest.get(`/api/v1/legal-details/${type}`);
     if (res.data['status'] === 'success') {
       set({ LegalDetails: res.data['data'] });
     }

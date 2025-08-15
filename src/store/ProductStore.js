@@ -1,10 +1,10 @@
 import { create } from 'zustand';
-import axios from 'axios';
+import { apiRequest } from '../utility/axiosRequest';
 
 const ProductStore = create((set) => ({
   BrandList: null,
   BrandListRequest: async () => {
-    let res = await axios.get(`/api/v1/products/brands`);
+    let res = await apiRequest.get('/api/v1/products/brands');
     if (res.data['status'] === 'success') {
       set({ BrandList: res.data['data'] });
     }
@@ -12,7 +12,7 @@ const ProductStore = create((set) => ({
 
   CategoryList: null,
   CategoryListRequest: async () => {
-    let res = await axios.get(`/api/v1/products/category`);
+    let res = await apiRequest.get('/api/v1/products/category');
     if (res.data['status'] === 'success') {
       set({ CategoryList: res.data['data'] });
     }
@@ -20,7 +20,7 @@ const ProductStore = create((set) => ({
 
   SliderList: null,
   SliderListRequest: async () => {
-    let res = await axios.get(`/api/v1/products/slider`);
+    let res = await apiRequest.get('/api/v1/products/slider');
     if (res.data['status'] === 'success') {
       set({ SliderList: res.data['data'] });
     }
@@ -29,7 +29,7 @@ const ProductStore = create((set) => ({
   ListByRemark: null,
   ListByRemarkRequest: async (remark) => {
     set({ ListByRemark: null });
-    let res = await axios.get(`/api/v1/products/remark/${remark}`);
+    let res = await apiRequest.get(`/api/v1/products/remark/${remark}`);
     if (res.data['status'] === 'success') {
       set({ ListByRemark: res.data['data'] });
     }
@@ -39,7 +39,7 @@ const ProductStore = create((set) => ({
   ListByRatingRequest: async () => {
     try {
       set({ ListByRating: null });
-      let res = await axios.get(`/api/v1/products/top-rated`);
+      let res = await apiRequest.get('/api/v1/products/top-rated');
       if (res.data['status'] === 'success') {
         set({ ListByRating: res.data['data'] });
       }
@@ -54,7 +54,7 @@ const ProductStore = create((set) => ({
   ListByBrandRequest: async (BrandID) => {
     set({ isProductLoading: true, productList: null, productError: false });
     try {
-      let res = await axios.get(`/api/v1/products/brands/${BrandID}`);
+      let res = await apiRequest.get(`/api/v1/products/brands/${BrandID}`);
       if (res.data['status'] === 'success') {
         set({ productList: res.data['data'] });
       }
@@ -69,7 +69,7 @@ const ProductStore = create((set) => ({
     try {
       const filteredFilters = Object.fromEntries(Object.entries(filters).filter(([_, value]) => value));
       const queryParams = new URLSearchParams(filteredFilters).toString();
-      let res = await axios.get(`/api/v1/products?${queryParams}`);
+      let res = await apiRequest.get(`/api/v1/products?${queryParams}`);
       if (res.data['status'] === 'success') {
         set({ productList: res.data['data'] });
       }
@@ -85,7 +85,7 @@ const ProductStore = create((set) => ({
   DetailsRequest: async (id) => {
     try {
       set({ isLoadingDetails: true });
-      let res = await axios.get(`/api/v1/products/product/${id}`);
+      let res = await apiRequest.get(`/api/v1/products/product/${id}`);
       if (res.data['status'] === 'success') {
         set({ Details: res.data['data'] });
       }
@@ -99,7 +99,7 @@ const ProductStore = create((set) => ({
 
   ReviewList: null,
   ReviewListRequest: async (id) => {
-    let res = await axios.get(`/api/v1/products/${id}/review`);
+    let res = await apiRequest.get(`/api/v1/products/${id}/review`);
     if (res.data['status'] === 'success') {
       set({ ReviewList: res.data['data'] });
     }
