@@ -23,9 +23,9 @@ const UserStore = create((set) => ({
       set({ isFormSubmit: true });
       let res = await apiRequest.post('/api/v1/users/login', formData);
       set({ isFormSubmit: false });
-      // if (res.data['status'] === 'success') {
-      //   Cookies.set('shopinz', res.data['data']['token'], { expires: 7 });
-      // }
+      if (res.data['status'] === 'success') {
+        Cookies.set('shopinz', res.data['data']['token'], { expires: 7 });
+      }
       return res.data['status'] === 'success';
     } catch (e) {
       set({ isFormSubmit: false });
@@ -83,6 +83,7 @@ const UserStore = create((set) => ({
     set({ isFormSubmit: false });
     sessionStorage.clear();
     localStorage.clear();
+    Cookies.remove('shopinz');
     return res.data['status'] === 'success';
   },
 
